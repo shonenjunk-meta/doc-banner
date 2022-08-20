@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Erc721SJFBBanner1 from '../components/banners/erc721#sj/FacebookBanner1';
+import Erc721SJOSBanner1 from '../components/banners/erc721#sj/OpenseaBanner1';
+import Erc721SJTWBanner1 from '../components/banners/erc721#sj/TwitterBanner1';
 import NftSelector from '../components/NftSelector';
 import { Nft } from '../model/Nft';
 import { getNftPlaceholders } from '../services/data.service';
@@ -8,7 +10,7 @@ import { LocalStorageService } from '../services/local-storage.service';
 export default function Home() {
   const [nfts, setNfts] = useState([] as Nft[]);
   const [visibleModal, setModalVisible] = useState(false);
-  const [data, setData] = useState(getNftPlaceholders(6));
+  const [data, setData] = useState(getNftPlaceholders(100));
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   let initialized: boolean = false;
@@ -64,12 +66,10 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Welcome to NFT Profile Builder</h1>
-      <h2>Banner</h2>
+      <Erc721SJTWBanner1 data={data} onAvatarClick={onAvatarClick} />
       <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
-      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
-      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
-      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
+      <Erc721SJOSBanner1 data={data} onAvatarClick={onAvatarClick} />
+
       <NftSelector
         nfts={nfts}
         inUseNfts={[]}

@@ -7,11 +7,11 @@ type Props = {
   onAvatarClick?: (index: number) => void;
 };
 
-export default function Erc721SJFBBanner1({ data, onAvatarClick }: Props) {
+export default function Erc721SJOSBanner1({ data, onAvatarClick }: Props) {
   return (
     <>
-      <h1>Facebook Banner</h1>
-      <div className='banner-wrapper facebook'>
+      <h1>Opeansea Banner</h1>
+      <div className='banner-wrapper opensea'>
         <div className={`${styles.erc721sjfbbanner1} capture banner`}>
           <div className='absolute height--20 top--10 left--5'>
             <AvatarImage data={data} index={0} />

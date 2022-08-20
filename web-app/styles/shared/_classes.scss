@@ -13,15 +13,41 @@
   }
 
   &.twitter {
-    left: 3%;
     bottom: -20%;
-    padding-top: 50%;
+    padding-top: 33.3333%;
     margin-bottom: 15%;
 
     &::after {
       width: 20%;
       padding-top: 20%;
       border-radius: 50%;
+      bottom: -33%;
+      left: 3%;
+      right: auto;
+    }
+  }
+
+  &.opensea {
+    bottom: -20%;
+    padding-top: 25%;
+    margin-bottom: 15%;
+
+    &::after {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      bottom: -42px;
+      left: 2%;
+      right: auto;
+
+      @include break-point(small) {
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        bottom: -28px;
+        left: 2%;
+        right: auto;
+      }
     }
   }
 
@@ -34,17 +60,17 @@
     }
 
     &::after {
-      width: 168px;
-      height: 168px;
+      width: 160px;
+      height: 160px;
       margin-left: auto;
       margin-right: auto;
       left: 0;
       right: 0;
-      bottom: -84px;
+      bottom: -92px;
 
       @include break-point(medium) {
-        width: 176px;
-        height: 176px;
+        width: 168px;
+        height: 168px;
         bottom: -150px;
         left: 3%;
         right: auto;
