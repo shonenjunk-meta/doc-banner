@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import Erc721SJFBBanner1 from '../components/banners/erc721#sj/FacebookBanner1';
 import NftSelector from '../components/NftSelector';
+import { Nft } from '../model/Nft';
 import { getNftPlaceholders } from '../services/data.service';
-import { LocalStorageService, NFT } from '../services/local-storage.service';
+import { LocalStorageService } from '../services/local-storage.service';
 
 export default function Home() {
-  const [nfts, setNfts] = useState([] as NFT[]);
+  const [nfts, setNfts] = useState([] as Nft[]);
   const [visibleModal, setModalVisible] = useState(false);
   const [data, setData] = useState(getNftPlaceholders(6));
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -25,8 +26,18 @@ export default function Home() {
       setNfts(storageService.getMyNFTs());
     }
 
+    function setupAvatarEvents() {
+      document.querySelectorAll('.nft').forEach((item) => {
+        item.addEventListener('click', (event) => {
+          let index = item.getAttribute('data-index');
+          onAvatarClick(parseInt(index));
+        });
+      });
+    }
+
     if (!initialized) {
       getAllNFTs();
+      setupAvatarEvents();
       initialized = true;
     }
   }, []);
@@ -44,7 +55,7 @@ export default function Home() {
     showNftSelector();
   }
 
-  function onAvatarSelected(avatar: NFT) {
+  function onAvatarSelected(avatar: Nft) {
     let dataCopy = [...data];
     dataCopy[selectedIndex] = avatar;
     setData(dataCopy);
@@ -55,6 +66,9 @@ export default function Home() {
     <div>
       <h1>Welcome to NFT Profile Builder</h1>
       <h2>Banner</h2>
+      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
+      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
+      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
       <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
       <NftSelector
         nfts={nfts}

@@ -1,12 +1,12 @@
-import { NFT } from '../services/local-storage.service';
 import styles from './NftSelector.module.scss';
 import classNames from 'classnames';
+import { Nft } from '../model/Nft';
 
 export interface INftSelectorProps {
-  nfts: NFT[];
-  inUseNfts: NFT[];
+  nfts: Nft[];
+  inUseNfts: Nft[];
   visible: boolean;
-  onAvatarSelected?: (avatar: NFT) => void;
+  onAvatarSelected?: (avatar: Nft) => void;
 }
 
 const NftSelector = (props: INftSelectorProps) => {

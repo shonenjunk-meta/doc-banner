@@ -1,20 +1,55 @@
 @import './mixins';
 
-.twitter-banner-wrapper {
+.banner-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 50%;
 
   &::after {
     position: absolute;
-    left: 3%;
-    bottom: -20%;
     content: '';
     background-color: greenyellow;
-    width: 20%;
-    padding-top: 20%;
-    border-radius: 50%;
     border: solid 4px black;
+    border-radius: 50%;
+  }
+
+  &.twitter {
+    left: 3%;
+    bottom: -20%;
+    padding-top: 50%;
+    margin-bottom: 15%;
+
+    &::after {
+      width: 20%;
+      padding-top: 20%;
+      border-radius: 50%;
+    }
+  }
+
+  &.facebook {
+    padding-top: 33.3333%;
+    margin-bottom: 120px;
+
+    @include break-point(medium) {
+      margin-bottom: 180px;
+    }
+
+    &::after {
+      width: 168px;
+      height: 168px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      bottom: -84px;
+
+      @include break-point(medium) {
+        width: 176px;
+        height: 176px;
+        bottom: -150px;
+        left: 3%;
+        right: auto;
+      }
+    }
   }
 }
 

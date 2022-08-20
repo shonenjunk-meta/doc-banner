@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { LocalStorageService, NFT } from '../services/local-storage.service';
+import { Nft } from '../model/Nft';
+import { LocalStorageService } from '../services/local-storage.service';
 
 export default function Home() {
-  const [nfts, setNfts] = useState([] as NFT[]);
+  const [nfts, setNfts] = useState([] as Nft[]);
 
   let initialized: boolean = false;
   let storageService: LocalStorageService;

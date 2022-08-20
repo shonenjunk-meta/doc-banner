@@ -1,18 +1,9 @@
 import { JUNKIES_DATA } from '../data/junkies';
-
-export type standard = 'ERC721';
-export type tokenCode = 'ERC721#SJ' | 'ERC721#OCMONK' | 'ERC721#WFNH-BE';
-
-export interface NFT {
-  code: tokenCode;
-  standard: standard;
-  id: string;
-  image_url: string;
-}
+import { Nft, standard, tokenCode } from '../model/Nft';
 
 export class LocalStorageService {
   private addresses: Map<string, standard> = new Map<string, standard>();
-  private myNFTs: NFT[] = [];
+  private myNFTs: Nft[] = [];
   private completedAddress: string[] = [];
 
   public constructor() {
@@ -48,7 +39,7 @@ export class LocalStorageService {
     return this.addresses;
   }
 
-  public getMyNFTs(): NFT[] {
+  public getMyNFTs(): Nft[] {
     return this.myNFTs;
   }
 
