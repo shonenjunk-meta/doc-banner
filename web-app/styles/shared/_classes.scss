@@ -141,13 +141,13 @@
 }
 
 .top {
-  @for $i from 1 through 100 {
+  @for $i from -100 through 100 {
     @include add-top-pos($i);
   }
 }
 
 .bottom {
-  @for $i from 1 through 100 {
+  @for $i from -100 through 100 {
     @include add-bottom-pos($i);
   }
 }

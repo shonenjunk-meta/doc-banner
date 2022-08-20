@@ -32,8 +32,8 @@ export default function Erc721SJTWBanner1({ data, onAvatarClick }: Props) {
           <div className='absolute height--20 top--32 left--27'>
             <AvatarImage data={data} index={5} />
           </div>
-          <div className='absolute height--100 top--0 right---8'>
-            <AvatarRoundedImage data={data} index={6} />
+          <div className='absolute height--100 bottom---20 right---8'>
+            <AvatarImage data={data} index={6} rounded={true} />
           </div>
         </div>
       </div>
