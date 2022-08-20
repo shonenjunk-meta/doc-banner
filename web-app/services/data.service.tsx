@@ -7,7 +7,7 @@ export const getNftPlaceholders = (number) => {
     defaultNfts.push({
       code: 'ERC721#SJ',
       standard: 'ERC721',
-      id: '0',
+      id: `-${i.toString()}`,
       image_url:
         'https://i.shinji.xyz/static/shonen-junk/images/silhouette-18.png?v=20220526',
     });

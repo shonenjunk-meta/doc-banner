@@ -4,7 +4,7 @@ import { LocalStorageService, NFT } from '../services/local-storage.service';
 export default function Home() {
   const [nfts, setNfts] = useState([] as NFT[]);
 
-  let retrieved: boolean = false;
+  let initialized: boolean = false;
   let storageService: LocalStorageService;
 
   // Retrieve all partner NFTs
@@ -19,9 +19,9 @@ export default function Home() {
       setNfts(storageService.getMyNFTs());
     }
 
-    if (!retrieved) {
+    if (!initialized) {
       getAllNFTs();
-      retrieved = true;
+      initialized = true;
     }
   }, []);
 

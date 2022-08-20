@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
-import { getNftPlaceholders } from '../../../services/data.service';
+import { useEffect } from 'react';
 import _ from 'lodash';
 import styles from './FacebookBanner1.module.scss';
+import { NFT } from '../../../services/local-storage.service';
 
-const maxAvatars: number = 6;
+type Props = {
+  data: NFT[];
+  onAvatarClick?: (index: number) => void;
+};
 
-export default function Erc721SJFBBanner1() {
-  const [nfts, setNfts] = useState(getNftPlaceholders(maxAvatars));
+export default function Erc721SJFBBanner1({ data, onAvatarClick }: Props) {
   let initialized: boolean = false;
 
   useEffect(() => {
@@ -14,10 +16,7 @@ export default function Erc721SJFBBanner1() {
       document.querySelectorAll('.nft').forEach((item) => {
         item.addEventListener('click', (event) => {
           let index = item.getAttribute('data-index');
-          let nftsCopy = [...nfts];
-          nftsCopy[index].image_url =
-            'https://i.shinji.xyz/static/shonen-junk/i/reveals/800x800/de7f5bba82e50dbdeed92f19576717cb97e89175de2dc8915453416746342b14.png?v=20220526';
-          setNfts(nftsCopy);
+          onAvatarClick(parseInt(index));
         });
       });
       initialized = true;
@@ -32,7 +31,7 @@ export default function Erc721SJFBBanner1() {
             key='0'
             data-index='0'
             className='nft'
-            src={nfts[0].image_url}
+            src={data[0].image_url}
           ></img>
         </div>
         <div className='absolute height--20 top--10 left--16'>
@@ -40,7 +39,7 @@ export default function Erc721SJFBBanner1() {
             key='1'
             data-index='1'
             className='nft'
-            src={nfts[1].image_url}
+            src={data[1].image_url}
           ></img>
         </div>
         <div className='absolute height--20 top--10 left--27'>
@@ -48,7 +47,7 @@ export default function Erc721SJFBBanner1() {
             key='2'
             data-index='2'
             className='nft'
-            src={nfts[2].image_url}
+            src={data[2].image_url}
           ></img>
         </div>
         <div className='absolute height--20 top--32 left--5'>
@@ -56,7 +55,7 @@ export default function Erc721SJFBBanner1() {
             key='3'
             data-index='3'
             className='nft'
-            src={nfts[3].image_url}
+            src={data[3].image_url}
           ></img>
         </div>
         <div className='absolute height--20 top--32 left--16'>
@@ -64,7 +63,7 @@ export default function Erc721SJFBBanner1() {
             key='4'
             data-index='4'
             className='nft'
-            src={nfts[4].image_url}
+            src={data[4].image_url}
           ></img>
         </div>
         <div className='absolute height--20 top--32 left--27'>
@@ -72,7 +71,7 @@ export default function Erc721SJFBBanner1() {
             key='5'
             data-index='5'
             className='nft'
-            src={nfts[5].image_url}
+            src={data[5].image_url}
           ></img>
         </div>
       </div>
