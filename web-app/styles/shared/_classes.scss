@@ -8,16 +8,10 @@
   &::after {
     position: absolute;
     left: 3%;
-    bottom: -25%;
-    content: 'asd';
+    bottom: -20%;
+    content: '';
     background-color: greenyellow;
-    width: 25%;
-    @include break-point(xsmall) {
-      width: 23%;
-    }
-    @include break-point(medium) {
-      width: 22%;
-    }
+    width: 20%;
     padding-top: 20%;
     border-radius: 50%;
     border: solid 4px black;

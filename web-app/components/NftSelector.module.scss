@@ -1,0 +1,27 @@
+.modal {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  .gridContainer {
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+
+    .gridItem {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+    }
+  }
+}
