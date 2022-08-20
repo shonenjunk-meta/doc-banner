@@ -1,6 +1,7 @@
 import styles from './Banner1.module.scss';
 import AvatarImage from '../../AvatarImage';
 import { Nft } from '../../../model/Nft';
+import AvatarRoundedImage from '../../RoundedImage';
 
 type Props = {
   data: Nft[];
@@ -31,8 +32,8 @@ export default function Erc721SJTWBanner1({ data, onAvatarClick }: Props) {
           <div className='absolute height--20 top--32 left--27'>
             <AvatarImage data={data} index={5} />
           </div>
-          <div className='absolute height--42 top--10 left--37'>
-            <AvatarImage data={data} index={6} />
+          <div className='absolute height--100 top--0 right---8'>
+            <AvatarRoundedImage data={data} index={6} />
           </div>
         </div>
       </div>

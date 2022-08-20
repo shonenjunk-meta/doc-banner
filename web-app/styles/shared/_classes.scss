@@ -5,6 +5,7 @@
   width: 100%;
 
   &::after {
+    overflow: hidden;
     position: absolute;
     content: '';
     background-color: greenyellow;
@@ -16,6 +17,7 @@
     bottom: -20%;
     padding-top: 33.3333%;
     margin-bottom: 15%;
+    overflow: hidden;
 
     &::after {
       width: 20%;
@@ -24,13 +26,27 @@
       bottom: -33%;
       left: 3%;
       right: auto;
+
+      @include break-point(small) {
+        padding-top: 0;
+        width: 133px;
+        height: 133px;
+        border-radius: 50%;
+        bottom: -70px;
+        left: 2%;
+        right: auto;
+      }
     }
   }
 
   &.opensea {
     bottom: -20%;
     padding-top: 25%;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
+
+    @include break-point(small) {
+      margin-bottom: 5%;
+    }
 
     &::after {
       width: 82px;
@@ -102,20 +118,24 @@
   }
 }
 
+.rounded {
+  border-radius: 50%;
+}
+
 .height {
-  @for $i from 1 through 100 {
+  @for $i from 1 through 150 {
     @include add-percent-height($i);
   }
 }
 
 .left {
-  @for $i from 1 through 100 {
+  @for $i from -100 through 100 {
     @include add-left-pos($i);
   }
 }
 
 .right {
-  @for $i from 1 through 100 {
+  @for $i from -100 through 100 {
     @include add-right-pos($i);
   }
 }

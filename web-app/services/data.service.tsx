@@ -1,7 +1,7 @@
-import { NFT } from './local-storage.service';
+import { Nft } from '../model/Nft';
 
 export const getNftPlaceholders = (number) => {
-  let defaultNfts: NFT[] = [];
+  let defaultNfts: Nft[] = [];
 
   for (let i = 0; i < number; i++) {
     defaultNfts.push({

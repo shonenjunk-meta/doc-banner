@@ -9,25 +9,6 @@ type Props = {
 };
 
 export default function Erc721SJFBBanner1({ data, onAvatarClick }: Props) {
-  function PrintDiv() {
-    html2canvas(document.querySelector('#capture')).then((canvas) => {
-      document.body.appendChild(canvas);
-      var myImage = canvas.toDataURL();
-      downloadURI(myImage, 'MaSimulation.png');
-    });
-  }
-
-  function downloadURI(uri, name) {
-    var link = document.createElement('a');
-
-    link.download = name;
-    link.href = uri;
-    document.body.appendChild(link);
-    link.click();
-    //after creating link you should delete dynamic link
-    //clearDynamicLink(link);
-  }
-
   return (
     <>
       <h1>Facebook Banner</h1>
@@ -53,7 +34,6 @@ export default function Erc721SJFBBanner1({ data, onAvatarClick }: Props) {
           </div>
         </div>
       </div>
-      <button onClick={() => PrintDiv()}>Test</button>
     </>
   );
 }
