@@ -25,7 +25,6 @@
     bottom: -20%;
     padding-top: 33.3333%;
     margin-bottom: 15%;
-    overflow: hidden;
 
     &::after {
       width: 20%;
@@ -102,7 +101,9 @@
     }
   }
 }
-
+.nft {
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
 .banner {
   position: absolute;
   top: 0;

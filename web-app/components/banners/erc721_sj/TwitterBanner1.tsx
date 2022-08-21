@@ -14,26 +14,14 @@ export default function Erc721SJTWBanner1({ data, onAvatarClick }: Props) {
       <h1>Twitter Banner</h1>
       <div className='banner-wrapper twitter'>
         <div className={`${styles.erc721sjfbbanner1} capture banner`}>
-          <div className='absolute height--20 top--10 left--5'>
+          <div className='absolute height--80 top--10 left--5'>
             <AvatarImage data={data} index={0} />
           </div>
-          <div className='absolute height--20 top--10 left--16'>
+          <div className='absolute height--80 top--10 left--16'>
             <AvatarImage data={data} index={1} />
           </div>
-          <div className='absolute height--20 top--10 left--27'>
+          <div className='absolute height--80 top--10 left--27'>
             <AvatarImage data={data} index={2} />
-          </div>
-          <div className='absolute height--20 top--32 left--5'>
-            <AvatarImage data={data} index={3} />
-          </div>
-          <div className='absolute height--20 top--32 left--16'>
-            <AvatarImage data={data} index={4} />
-          </div>
-          <div className='absolute height--20 top--32 left--27'>
-            <AvatarImage data={data} index={5} />
-          </div>
-          <div className='absolute height--100 bottom---20 right---8'>
-            <AvatarImage data={data} index={6} rounded={true} />
           </div>
         </div>
       </div>
