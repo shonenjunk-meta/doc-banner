@@ -110,7 +110,7 @@ const NftSelector = (props: INftSelectorProps) => {
       <div
         className={classNames(styles.walletWrapper, showWallet ? '' : 'hidden')}
       >
-        <h2>Wallet</h2>
+        <h2>Wallets</h2>
         <div>
           {wallets.map(([key, value]) => (
             <div key={key} className={styles.wallet}>
@@ -135,7 +135,7 @@ const NftSelector = (props: INftSelectorProps) => {
       <div className={showWallet ? 'hidden' : ''}>
         <div className={styles.filter}>
           <select name='nfts' id='collectionId' onChange={search}>
-            <option value='ALL'>ALL</option>
+            <option value='ALL'>All NFT</option>
             <option value='ERC721_OCMONK'>OCM Genesis</option>
             <option value='ERC721_SJ'>SJ Genesis</option>
             {/* <option value='ERC721_WFNH-BE'>WF Bronze Ed</option> */}
@@ -144,7 +144,7 @@ const NftSelector = (props: INftSelectorProps) => {
             id='keyword'
             type='text'
             onChange={search}
-            placeholder='Token ID'
+            placeholder='Search by Token ID'
           />
         </div>
         <div className={styles.gridContainer}>
@@ -171,6 +171,7 @@ const NftSelector = (props: INftSelectorProps) => {
                       search();
                     }}
                   />
+                  <span>{nft.id}</span>
                 </div>
               ))
           )}

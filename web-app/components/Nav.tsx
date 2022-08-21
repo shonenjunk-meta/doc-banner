@@ -5,16 +5,16 @@ import styles from './Nav.module.scss';
 export default function Nav() {
   const router = useRouter();
   const currentRoute = router.pathname;
+
   return (
     <nav className={styles.nav}>
-      <Link className={currentRoute === '/' ? styles.active : ''} href='/'>
-        Create
+      <Link href='/'>
+        <a className={currentRoute === '/' ? styles.active : ''}>Create</a>
       </Link>
-      <Link
-        className={currentRoute === '/history' ? styles.active : ''}
-        href='/history'
-      >
-        History
+      <Link href='/history'>
+        <a className={currentRoute === '/history' ? styles.active : ''}>
+          History
+        </a>
       </Link>
     </nav>
   );
