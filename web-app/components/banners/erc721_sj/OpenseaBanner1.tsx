@@ -18,15 +18,14 @@ export default function Erc721SJOSBanner1({ data, onAvatarClick }: Props) {
         allowTaint: false,
       }).then((canvas) => {
         // document.body.appendChild(canvas);
-
         var myImage = canvas.toDataURL('image/png');
         downloadURI(myImage, 'testaa.png');
-
         // var image = canvas
         //   .toDataURL('image/png')
         //   .replace('image/png', 'image/octet-stream'); // here is the most important part because if you dont replace you will get a DOM 18 exception.
         // window.location.href = image;
         // console.log(image);
+        setDownloading(false);
       });
     }
   }, [downloading]);
@@ -61,7 +60,9 @@ export default function Erc721SJOSBanner1({ data, onAvatarClick }: Props) {
   return (
     <>
       <h1>Opeansea Banner</h1>
-      <div className='banner-wrapper opensea'>
+      <div
+        className={`banner-wrapper opensea ${downloading ? 'printing' : ''}`}
+      >
         <div id='capture2' className={`${styles.erc721sjfbbanner1} banner`}>
           <div className='absolute height--20 top--10 left--5'>
             <AvatarImage data={data} index={0} />

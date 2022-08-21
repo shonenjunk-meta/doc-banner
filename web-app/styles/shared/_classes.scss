@@ -4,6 +4,14 @@
   position: relative;
   width: 100%;
 
+  &.printing {
+    margin-left: -500% !important;
+    width: 1500px !important;
+    height: 375px !important;
+    min-width: 1500px;
+    min-height: 375px;
+  }
+
   &::after {
     overflow: hidden;
     position: absolute;
