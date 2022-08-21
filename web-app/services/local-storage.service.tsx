@@ -7,17 +7,15 @@ export class LocalStorageService {
   private completedAddress: string[] = [];
 
   public constructor() {
-    let addressesMap = localStorage.getItem('addresses');
-    try {
-      this.addresses = new Map(JSON.parse(addressesMap));
-    } catch {}
+    this.getAddressesFromStorage();
   }
 
   public AddAddress(address: string) {
+    address = address.toLowerCase();
     const addressType: standard = 'ERC721';
 
-    if (!this.addresses.has(address.toLowerCase())) {
-      this.addresses.set(address.toLowerCase(), addressType);
+    if (!this.addresses.has(address)) {
+      this.addresses.set(address, addressType);
       localStorage.setItem(
         'addresses',
         JSON.stringify(Array.from(this.addresses.entries()))
@@ -26,8 +24,9 @@ export class LocalStorageService {
   }
 
   public RemoveAddress(type: standard, address: string) {
-    if (this.addresses.has(address.toLowerCase())) {
-      this.addresses.delete(address.toLowerCase());
+    address = address.toLowerCase();
+    if (this.addresses.has(address)) {
+      this.addresses.delete(address);
       localStorage.setItem(
         'addresses',
         JSON.stringify(Array.from(this.addresses.entries()))
@@ -41,6 +40,12 @@ export class LocalStorageService {
 
   public getMyNFTs(): Nft[] {
     return this.myNFTs;
+  }
+
+  public resetNFTs() {
+    this.completedAddress = [];
+    this.myNFTs = [];
+    this.getAddressesFromStorage();
   }
 
   public async findNFTs(address: string, standard: standard) {
@@ -98,5 +103,12 @@ export class LocalStorageService {
 
   private getImageUrl(code: tokenCode, id: string): string {
     return `/api/avatar?code=${code}&id=${id}`;
+  }
+
+  private getAddressesFromStorage() {
+    let addressesMap = localStorage.getItem('addresses');
+    try {
+      this.addresses = new Map(JSON.parse(addressesMap));
+    } catch {}
   }
 }

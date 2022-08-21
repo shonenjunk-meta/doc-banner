@@ -52,17 +52,27 @@ export default function Home() {
     setModalVisible(false);
   };
 
-  function onAvatarClick(index: number) {
+  const onAvatarClick = (index: number) => {
     setSelectedIndex(index);
     showNftSelector();
-  }
+  };
 
-  function onAvatarSelected(avatar: Nft) {
+  const onAvatarSelected = (avatar: Nft) => {
     let dataCopy = [...data];
     dataCopy[selectedIndex] = avatar;
     setData(dataCopy);
     hideNftSelector();
-  }
+  };
+
+  const updatedAddresses = async () => {
+    let promises = [];
+    storageService = new LocalStorageService();
+    storageService.GetAddresses().forEach(async (standard, address) => {
+      promises.push(storageService.findNFTs(address, standard));
+    });
+    await Promise.all(promises);
+    setNfts(storageService.getMyNFTs());
+  };
 
   return (
     <div>
@@ -76,6 +86,7 @@ export default function Home() {
         visible={visibleModal}
         onAvatarSelected={onAvatarSelected}
         onCloseClick={hideNftSelector}
+        updatedAddresses={updatedAddresses}
       />
     </div>
   );

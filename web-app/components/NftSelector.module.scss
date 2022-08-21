@@ -45,30 +45,68 @@
     }
   }
 
-  .closeButton {
-    background-color: transparent;
-    border: none;
+  .buttonWrapper {
+    display: flex;
+    justify-content: space-between;
 
-    text-align: left;
-    font-size: 2em;
-    margin-top: 20px;
-    margin-left: 20px;
+    .closeButton,
+    .walletButton {
+      background-color: transparent;
+      border: none;
+
+      text-align: left;
+      font-size: 2em;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  .walletWrapper {
+    margin: 10px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .wallet {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      justify-content: center;
+
+      span {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0 5px;
+        padding: 8px 14px;
+        background-color: #333333;
+        border-radius: 5px;
+      }
+    }
   }
 
   .gridContainer {
     text-align: center;
     padding: 20px;
-    height: 100%;
+    height: 80vh;
     overflow-y: auto;
+    padding-bottom: 30px;
 
     .gridItem {
       display: inline-block;
       height: 100px;
       width: 100px;
+      margin: 5px;
 
       img {
         width: 100px;
         height: auto;
+        border-radius: 50%;
+        border: solid 4px transparent;
+
+        &:hover {
+          border: solid 4px lime;
+        }
       }
     }
   }
