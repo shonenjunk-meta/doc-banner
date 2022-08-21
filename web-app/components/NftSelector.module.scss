@@ -1,3 +1,5 @@
+@import '../styles/shared/core';
+
 .modal {
   background-color: black;
   position: fixed;
@@ -10,6 +12,37 @@
 
   &.visible {
     visibility: visible;
+  }
+
+  .filter {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @include break-point(small) {
+      margin-left: 20px;
+      margin-right: 20px;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      select {
+        flex-grow: 1;
+        margin-left: 0;
+      }
+      input {
+        flex-grow: 5;
+      }
+    }
+
+    select,
+    input {
+      font-size: 0.8em;
+      padding: 10px 10px;
+      margin: 5px 20px;
+      @include break-point(small) {
+        margin: 5px 5px;
+      }
+    }
   }
 
   .gridContainer {

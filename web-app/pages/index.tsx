@@ -75,6 +75,7 @@ export default function Home() {
         inUseNfts={[]}
         visible={visibleModal}
         onAvatarSelected={onAvatarSelected}
+        onCloseClick={hideNftSelector}
       />
     </div>
   );
