@@ -5,7 +5,7 @@ export const getNftPlaceholders = (number) => {
 
   for (let i = 0; i < number; i++) {
     defaultNfts.push({
-      code: 'ERC721#SJ',
+      code: 'ERC721_SJ',
       standard: 'ERC721',
       id: `-${i.toString()}`,
       image_url:

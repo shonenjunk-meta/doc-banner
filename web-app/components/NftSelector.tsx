@@ -11,7 +11,6 @@ export interface INftSelectorProps {
 
 const NftSelector = (props: INftSelectorProps) => {
   const showHideClassName = props.visible ? styles.visible : '';
-
   return (
     <div className={classNames(styles.modal, showHideClassName)}>
       <div className={styles.gridContainer}>

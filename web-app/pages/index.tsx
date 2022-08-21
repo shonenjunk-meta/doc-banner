@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Erc721SJFBBanner1 from '../components/banners/erc721#sj/FacebookBanner1';
-import Erc721SJOSBanner1 from '../components/banners/erc721#sj/OpenseaBanner1';
-import Erc721SJTWBanner1 from '../components/banners/erc721#sj/TwitterBanner1';
+import Erc721SJFBBanner1 from '../components/banners/erc721_sj/FacebookBanner1';
+import Erc721SJOSBanner1 from '../components/banners/erc721_sj/OpenseaBanner1';
+import Erc721SJTWBanner1 from '../components/banners/erc721_sj/TwitterBanner1';
 import NftSelector from '../components/NftSelector';
 import { Nft } from '../model/Nft';
 import { getNftPlaceholders } from '../services/data.service';

@@ -2,6 +2,7 @@ import styles from './Banner1.module.scss';
 import AvatarImage from '../../AvatarImage';
 import { Nft } from '../../../model/Nft';
 import html2canvas from 'html2canvas';
+import { useEffect, useState } from 'react';
 
 type Props = {
   data: Nft[];
@@ -9,17 +10,46 @@ type Props = {
 };
 
 export default function Erc721SJOSBanner1({ data, onAvatarClick }: Props) {
+  const [downloading, setDownloading] = useState(false);
+
+  useEffect(() => {
+    if (downloading) {
+      html2canvas(document.querySelector('#capture2'), {
+        allowTaint: false,
+      }).then((canvas) => {
+        // document.body.appendChild(canvas);
+
+        var myImage = canvas.toDataURL('image/png');
+        downloadURI(myImage, 'testaa.png');
+
+        // var image = canvas
+        //   .toDataURL('image/png')
+        //   .replace('image/png', 'image/octet-stream'); // here is the most important part because if you dont replace you will get a DOM 18 exception.
+        // window.location.href = image;
+        // console.log(image);
+      });
+    }
+  }, [downloading]);
+
   function PrintDiv() {
-    html2canvas(document.querySelector('#capture2'), { allowTaint: true }).then(
-      (canvas) => {
-        document.body.appendChild(canvas);
-      }
-    );
+    html2canvas(document.querySelector('#capture2'), {
+      allowTaint: false,
+    }).then((canvas) => {
+      // document.body.appendChild(canvas);
+
+      var myImage = canvas.toDataURL('image/png');
+      downloadURI(myImage, 'testaa.png');
+
+      // var image = canvas
+      //   .toDataURL('image/png')
+      //   .replace('image/png', 'image/octet-stream'); // here is the most important part because if you dont replace you will get a DOM 18 exception.
+      // window.location.href = image;
+      // console.log(image);
+    });
   }
 
   function downloadURI(uri, name) {
     var link = document.createElement('a');
-
     link.download = name;
     link.href = uri;
     document.body.appendChild(link);
@@ -27,6 +57,7 @@ export default function Erc721SJOSBanner1({ data, onAvatarClick }: Props) {
     //after creating link you should delete dynamic link
     //clearDynamicLink(link);
   }
+
   return (
     <>
       <h1>Opeansea Banner</h1>
@@ -52,7 +83,7 @@ export default function Erc721SJOSBanner1({ data, onAvatarClick }: Props) {
           </div>
         </div>
       </div>
-      <button onClick={() => PrintDiv()}>Test</button>
+      <button onClick={() => setDownloading(true)}>Test</button>
     </>
   );
 }

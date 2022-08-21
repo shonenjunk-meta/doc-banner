@@ -1,6 +1,6 @@
-import { NFT } from '../services/local-storage.service';
+import { Nft } from './Nft';
 
 export type OutputProps = {
-  data: NFT[];
+  data: Nft[];
   onAvatarClick?: (index: number) => void;
 };

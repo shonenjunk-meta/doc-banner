@@ -60,8 +60,8 @@ export class LocalStorageService {
   private async getErc721NFTs(address: string) {
     address = address.toLowerCase();
     let erc721WhiteList: string[] = [
-      'ERC721#SJ',
-      'ERC721#OCMONK',
+      'ERC721_SJ',
+      'ERC721_OCMONK',
       //'ERC721#WFNH-BE',
     ];
 
@@ -72,11 +72,9 @@ export class LocalStorageService {
 
       if (response.status === '1') {
         response.result.forEach((tx: any) => {
-          let tokenSymbol = `ERC721#${tx.tokenSymbol}`;
+          let tokenSymbol = `ERC721_${tx.tokenSymbol}`;
           if (erc721WhiteList.includes(tokenSymbol)) {
             if (tx.to.toLowerCase() === address) {
-              console.log();
-
               this.myNFTs.push({
                 code: tokenSymbol as tokenCode,
                 standard: 'ERC721',
@@ -99,13 +97,6 @@ export class LocalStorageService {
   }
 
   private getImageUrl(code: tokenCode, id: string): string {
-    switch (code) {
-      case 'ERC721#OCMONK':
-        return `https://d3q7x2s6555pey.cloudfront.net/png/${id}.png`;
-      case 'ERC721#SJ':
-        return `https://static.shinji.xyz/unit-00/nft-images/${
-          JUNKIES_DATA[parseInt(id)].hash
-        }.png`;
-    }
+    return `/api/avatar?code=${code}&id=${id}`;
   }
 }

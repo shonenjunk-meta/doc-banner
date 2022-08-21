@@ -1,5 +1,5 @@
 export type standard = 'ERC721';
-export type tokenCode = 'ERC721#SJ' | 'ERC721#OCMONK' | 'ERC721#WFNH-BE';
+export type tokenCode = 'ERC721_SJ' | 'ERC721_OCMONK' | 'ERC721_WFNH-BE';
 
 export interface Nft {
   code: tokenCode;
