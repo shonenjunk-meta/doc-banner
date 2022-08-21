@@ -1,0 +1,17 @@
+@import '../styles/shared/core';
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgb(42, 48, 54);
+
+  a {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    &:hover,
+    &.active {
+      background-color: black;
+    }
+  }
+}

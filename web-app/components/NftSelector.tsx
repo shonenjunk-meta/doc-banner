@@ -5,6 +5,7 @@ import {
   faWallet,
   faPaste,
   faTrash,
+  faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import { Nft, standard } from '../model/Nft';
@@ -24,6 +25,7 @@ export interface INftSelectorProps {
 
 const NftSelector = (props: INftSelectorProps) => {
   const [wallets, setWallets] = useState([]);
+
   const [showWallet, setShowWallet] = useState(
     props.nfts.length === 0 ? true : false
   );
@@ -40,7 +42,9 @@ const NftSelector = (props: INftSelectorProps) => {
   useEffect(() => {
     async function getWallets() {
       storageService = new LocalStorageService();
-      setWallets(Array.from(storageService.GetAddresses()));
+      let arrayWallets = Array.from(storageService.GetAddresses());
+      setWallets(arrayWallets);
+      setShowWallet(arrayWallets.length === 0 ? true : false);
     }
 
     if (!initialized) {
@@ -100,7 +104,7 @@ const NftSelector = (props: INftSelectorProps) => {
           className={`icon-button ${styles.walletButton}`}
           onClick={() => setShowWallet(!showWallet)}
         >
-          <FontAwesomeIcon icon={faWallet} />
+          <FontAwesomeIcon icon={showWallet ? faUserCircle : faWallet} />
         </button>
       </div>
       <div
