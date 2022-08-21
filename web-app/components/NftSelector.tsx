@@ -1,4 +1,6 @@
 import styles from './NftSelector.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import { Nft } from '../model/Nft';
 import _ from 'lodash';
@@ -30,8 +32,13 @@ const NftSelector = (props: INftSelectorProps) => {
 
   return (
     <div className={classNames(styles.modal, showHideClassName)}>
+      <button
+        className={styles.closeButton}
+        onClick={() => props.onCloseClick()}
+      >
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
       <div className={styles.filter}>
-        <button onClick={() => props.onCloseClick()}>Close</button>
         <select name='nfts' id='collectionId' onChange={search}>
           <option value='ALL'>ALL</option>
           <option value='ERC721_OCMONK'>OCM Genesis</option>
