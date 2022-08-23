@@ -1,131 +1,6 @@
 @import './mixins';
 @import './avatar';
 
-.banner-wrapper {
-  position: relative;
-  width: 100%;
-
-  &.printing {
-    margin-left: -500% !important;
-    width: 1500px !important;
-    height: 375px !important;
-    min-width: 1500px;
-    min-height: 375px;
-  }
-
-  &::after {
-    overflow: hidden;
-    position: absolute;
-    content: '';
-    background-color: greenyellow;
-    border: solid 4px black;
-    border-radius: 50%;
-  }
-
-  &.twitter {
-    bottom: -20%;
-    padding-top: 33.3333%;
-    margin-bottom: 15%;
-
-    &::after {
-      width: 20%;
-      padding-top: 20%;
-      border-radius: 50%;
-      bottom: -33%;
-      left: 3%;
-      right: auto;
-
-      @include break-point(small) {
-        padding-top: 0;
-        width: 133px;
-        height: 133px;
-        border-radius: 50%;
-        bottom: -70px;
-        left: 2%;
-        right: auto;
-      }
-    }
-  }
-
-  &.opensea {
-    bottom: -20%;
-    padding-top: 25%;
-    margin-bottom: 10%;
-
-    @include break-point(small) {
-      margin-bottom: 5%;
-    }
-
-    &::after {
-      width: 82px;
-      height: 82px;
-      border-radius: 50%;
-      bottom: -42px;
-      left: 2%;
-      right: auto;
-
-      @include break-point(small) {
-        width: 108px;
-        height: 108px;
-        border-radius: 50%;
-        bottom: -28px;
-        left: 2%;
-        right: auto;
-      }
-    }
-  }
-
-  &.facebook {
-    padding-top: 33.3333%;
-    margin-bottom: 120px;
-
-    @include break-point(medium) {
-      margin-bottom: 180px;
-    }
-
-    &::after {
-      width: 160px;
-      height: 160px;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      bottom: -92px;
-
-      @include break-point(medium) {
-        width: 168px;
-        height: 168px;
-        bottom: -150px;
-        left: 3%;
-        right: auto;
-      }
-    }
-  }
-}
-.banner {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  img {
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    border: solid 4px transparent;
-
-    &:hover {
-      cursor: pointer;
-      border: solid 4px lime;
-    }
-  }
-
-  .absolute {
-    position: absolute;
-  }
-}
-
 .rounded {
   border-radius: 50%;
 }
@@ -192,6 +67,10 @@
     color: #00bd68;
     cursor: pointer;
   }
+}
+
+.absolute {
+  position: absolute;
 }
 
 .visible {

@@ -7,3 +7,13 @@ export interface Nft {
   id: string;
   image_url: string;
 }
+
+export interface NftDisplay extends Nft {
+  top?: number;
+  left?: number;
+  height?: number;
+  shape?: string;
+  angle?: number;
+  rotate?: string;
+  classNames?: string;
+}

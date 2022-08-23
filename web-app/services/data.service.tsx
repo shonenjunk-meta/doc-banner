@@ -9,7 +9,7 @@ export const getNftPlaceholders = (number) => {
       standard: 'ERC721',
       id: `-${i.toString()}`,
       image_url:
-        'https://i.shinji.xyz/static/shonen-junk/images/silhouette-18.png?v=20220526',
+        'https://image.shutterstock.com/image-vector/chess-board-monochrome-image-square-600w-364734542.jpg',
     });
   }
 

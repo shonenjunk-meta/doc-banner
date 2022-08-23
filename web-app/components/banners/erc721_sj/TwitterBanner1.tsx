@@ -1,6 +1,7 @@
 import styles from './Banner1.module.scss';
 import AvatarImage from '../../AvatarImage';
 import { Nft } from '../../../model/Nft';
+import { useState } from 'react';
 
 type Props = {
   data: Nft[];
