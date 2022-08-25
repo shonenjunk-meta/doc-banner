@@ -11,15 +11,15 @@
     border-radius: 50%;
   }
 
+  @include break-point(small) {
+    margin-bottom: 10px !important;
+  }
+
   // Sizes
   &.twitter-banner {
     bottom: -20%;
     padding-top: 33.3333%;
     margin-bottom: 15%;
-
-    @include break-point(small) {
-      margin-bottom: 85px;
-    }
 
     &::after {
       width: 20%;
@@ -44,11 +44,7 @@
   &.opensea-banner {
     bottom: -20%;
     padding-top: 25%;
-    margin-bottom: 10%;
-
-    @include break-point(small) {
-      margin-bottom: 5%;
-    }
+    margin-bottom: 57px;
 
     &::after {
       width: 82px;
@@ -73,10 +69,6 @@
     padding-top: 33.3333%;
     margin-bottom: 120px;
 
-    @include break-point(medium) {
-      margin-bottom: 180px;
-    }
-
     &::after {
       width: 160px;
       height: 160px;
@@ -94,6 +86,12 @@
         right: auto;
       }
     }
+  }
+}
+
+.download-button {
+  @include break-point(small) {
+    float: right;
   }
 }
 
@@ -195,7 +193,6 @@
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 }
 .chevron-left {
-  border-radius: 50%;
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
 .chevron-right {
