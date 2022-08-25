@@ -77,3 +77,19 @@
     right: unquote($argument + '%');
   }
 }
+
+@mixin add-bg-pos-x($argument) {
+  $number: $argument;
+
+  &--#{$number} {
+    background-position-x: unquote($argument + '%');
+  }
+}
+
+@mixin add-bg-pos-y($argument) {
+  $number: $argument;
+
+  &--#{$number} {
+    background-position-y: unquote($argument + '%');
+  }
+}

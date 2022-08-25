@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react';
 import Erc721SJFBBanner1 from '../components/banners/erc721_sj/FacebookBanner1';
 import Erc721SJOSBanner1 from '../components/banners/erc721_sj/OpenseaBanner1';
 import Erc721SJTWBanner1 from '../components/banners/erc721_sj/TwitterBanner1';
+import BannerBase from '../components/layouts/Banner';
+import LayoutSelector from '../components/LayoutSelector';
 import NftSelector from '../components/NftSelector';
 import { Nft } from '../model/Nft';
+import { ITheme } from '../model/Theme';
 import { getNftPlaceholders } from '../services/data.service';
 import { LocalStorageService } from '../services/local-storage.service';
 
 export default function Home() {
+  const [theme, setTheme] = useState(null);
   const [nfts, setNfts] = useState([] as Nft[]);
   const [visibleModal, setModalVisible] = useState(false);
   const [data, setData] = useState(getNftPlaceholders(100));
@@ -28,18 +32,8 @@ export default function Home() {
       setNfts(storageService.getMyNFTs());
     }
 
-    function setupAvatarEvents() {
-      document.querySelectorAll('.nft').forEach((item) => {
-        item.addEventListener('click', (event) => {
-          let index = item.getAttribute('data-index');
-          onAvatarClick(parseInt(index));
-        });
-      });
-    }
-
     if (!initialized) {
       getAllNFTs();
-      setupAvatarEvents();
       initialized = true;
     }
   }, []);
@@ -50,6 +44,10 @@ export default function Home() {
 
   const hideNftSelector = () => {
     setModalVisible(false);
+  };
+
+  const themeUpdated = (theme: ITheme) => {
+    setTheme(theme);
   };
 
   const onAvatarClick = (index: number) => {
@@ -76,9 +74,9 @@ export default function Home() {
 
   return (
     <div>
-      <Erc721SJTWBanner1 data={data} onAvatarClick={onAvatarClick} />
-      <Erc721SJFBBanner1 data={data} onAvatarClick={onAvatarClick} />
-      <Erc721SJOSBanner1 data={data} onAvatarClick={onAvatarClick} />
+      <LayoutSelector themeUpdated={themeUpdated} />
+
+      <BannerBase data={data} onAvatarClick={onAvatarClick} theme={theme} />
 
       <NftSelector
         nfts={nfts}

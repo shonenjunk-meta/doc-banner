@@ -111,3 +111,47 @@
     @include add-bottom-pos($i);
   }
 }
+
+.bg {
+  &-size {
+    &--cover {
+      background-size: cover;
+    }
+  }
+}
+
+.bg-pos-x {
+  @for $i from -100 through 100 {
+    @include add-bg-pos-x($i);
+  }
+  &--left {
+    background-position-x: left;
+  }
+  &--right {
+    background-position-x: right;
+  }
+  &--top {
+    background-position-x: top;
+  }
+  &--bottom {
+    background-position-x: bottom;
+  }
+}
+
+.bg-pos-y {
+  @for $i from -100 through 100 {
+    @include add-bg-pos-y($i);
+  }
+  &--left {
+    background-position-y: left;
+  }
+  &--right {
+    background-position-y: right;
+  }
+  &--top {
+    background-position-y: top;
+  }
+  &--bottom {
+    background-position-y: bottom;
+  }
+}
