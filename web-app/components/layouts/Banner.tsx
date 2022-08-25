@@ -4,6 +4,7 @@ import domtoimage from 'dom-to-image';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import AvatarImage from '../AvatarImage';
 
 type Props = {
   data: Nft[];
@@ -51,20 +52,15 @@ export default function BannerBase({ data, theme, onAvatarClick }: Props) {
           {!theme || theme.nfts.length === 0
             ? ''
             : theme.nfts.map((item, index) => (
-                <div
+                <AvatarImage
                   key={index}
-                  className={`absolute ${item.classNames ?? ''}`}
-                >
-                  <img
-                    key={index}
-                    data-index={index}
-                    className={`nft ${item.imageClassNames ?? ''} ${
-                      item.shape ?? ''
-                    }`}
-                    src={data[index].image_url}
-                    onClick={() => onAvatarClick(index)}
-                  />
-                </div>
+                  data={data}
+                  index={index}
+                  classNames={item.classNames}
+                  imageClassNames={item.imageClassNames}
+                  shape={item.shape}
+                  onAvatarClick={onAvatarClick}
+                />
               ))}
         </div>
       </div>

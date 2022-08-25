@@ -100,6 +100,10 @@
   width: 1500px !important;
   min-width: 1500px;
   min-height: 375px;
+
+  .no-print {
+    display: none;
+  }
 }
 
 .backdrop {

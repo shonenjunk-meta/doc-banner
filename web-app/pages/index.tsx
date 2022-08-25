@@ -52,7 +52,11 @@ export default function Home() {
 
   const onAvatarClick = (index: number) => {
     setSelectedIndex(index);
-    showNftSelector();
+    let dataCopy = [...data];
+    if (dataCopy[index].id.startsWith('-')) {
+      showNftSelector();
+      return;
+    }
   };
 
   const onAvatarSelected = (avatar: Nft) => {
