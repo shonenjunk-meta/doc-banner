@@ -10,6 +10,7 @@ export interface IThemeImage {
 export interface IThemeNft {
   classNames?: string;
   imageClassNames?: string;
+  shape?: string;
 }
 
 export interface IThemeSpeech {

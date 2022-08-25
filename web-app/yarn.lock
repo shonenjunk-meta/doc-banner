@@ -569,6 +569,11 @@
   dependencies:
     "esutils" "^2.0.2"
 
+"dom-to-image@^2.6.0":
+  "integrity" "sha512-Dt0QdaHmLpjURjU7Tnu3AgYSF2LuOmksSGsUcE6ItvJoCWTBEmiMXcqBdNSAm9+QbbwD7JMoVsuuKX6ZVQv1qA=="
+  "resolved" "https://registry.npmjs.org/dom-to-image/-/dom-to-image-2.6.0.tgz"
+  "version" "2.6.0"
+
 "emoji-regex@^9.2.2":
   "integrity" "sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg=="
   "resolved" "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
