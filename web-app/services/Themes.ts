@@ -1,5 +1,4 @@
 import { ITheme } from '../model/Theme';
-import bdWfnh from '../public/backdrops/wfnh.png';
 
 export const themes: ITheme[] = [
   /**
