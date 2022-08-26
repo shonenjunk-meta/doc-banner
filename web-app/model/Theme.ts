@@ -1,6 +1,11 @@
 import { StaticImageData } from 'next/image';
 
-export type ThemeSize = 'twitter_banner' | 'facebook_banner' | 'opensea_banner';
+export type ThemeSize =
+  | 'twitter_banner'
+  | 'facebook_banner'
+  | 'opensea_banner'
+  | 'square'
+  | 'pillar';
 
 export interface IThemeImage {
   imageClassName?: string;

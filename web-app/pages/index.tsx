@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
-import Erc721SJFBBanner1 from '../components/banners/erc721_sj/FacebookBanner1';
-import Erc721SJOSBanner1 from '../components/banners/erc721_sj/OpenseaBanner1';
-import Erc721SJTWBanner1 from '../components/banners/erc721_sj/TwitterBanner1';
-import BannerBase from '../components/layouts/Banner';
+import BannerBase from '../components/Canvas';
 import LayoutSelector from '../components/LayoutSelector';
 import NftSelector from '../components/NftSelector';
 import { Nft } from '../model/Nft';
@@ -53,9 +50,10 @@ export default function Home() {
   const onAvatarClick = (index: number) => {
     setSelectedIndex(index);
     let dataCopy = [...data];
+    showNftSelector();
     if (dataCopy[index].id.startsWith('-')) {
-      showNftSelector();
-      return;
+      //showNftSelector();
+      //return;
     }
   };
 

@@ -1,0 +1,17 @@
+.split_1_of_2 {
+  width: 40%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    max-width: 200%;
+  }
+}
+.split_2_of_2 {
+  width: 40%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    max-width: 200%;
+    left: -100%;
+  }
+}

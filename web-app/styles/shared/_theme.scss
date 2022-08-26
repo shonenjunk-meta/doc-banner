@@ -1,8 +1,10 @@
 .main-wrapper {
   position: relative;
   width: 100%;
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 
   &::after {
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
     overflow: hidden;
     position: absolute;
     content: '';
@@ -87,9 +89,34 @@
       }
     }
   }
+
+  &.square {
+    padding-top: 100%;
+    margin-bottom: 25px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &.pillar {
+    padding-top: 150%;
+    margin-bottom: 25px;
+
+    &::after {
+      display: none;
+    }
+  }
 }
 
-.download-button {
+.canvas-buttons {
+  button:not(:last-child) {
+    margin-bottom: 10px;
+    @include break-point(small) {
+      margin-right: 10px;
+    }
+  }
+
   @include break-point(small) {
     float: right;
   }
@@ -143,8 +170,17 @@
 .trapezoid {
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
-.parallelogram {
+.point-right {
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.point-left {
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.parallelogram-right {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.parallelogram-left {
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
 }
 .rhombus {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);

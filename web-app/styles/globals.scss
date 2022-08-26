@@ -21,7 +21,8 @@ a {
     color-scheme: dark;
   }
   body {
+    min-height: 100vh;
     color: white;
-    background: black;
+    background: rgb(232, 232, 232);
   }
 }

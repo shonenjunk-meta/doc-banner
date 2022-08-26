@@ -21,10 +21,10 @@ const LayoutSelector = ({ themeUpdated }: Props) => {
         (theme) => theme.size === size.value
       );
       setFilter({
-        size: 'twitter_banner',
+        size: size.value,
         themeId: filteredThemes.length > 0 ? filteredThemes[0].id : '',
       });
-      themeUpdated(filteredThemes[0]);
+      themeChange();
     }
     initialized = true;
   }, []);
@@ -56,6 +56,8 @@ const LayoutSelector = ({ themeUpdated }: Props) => {
         <option value='twitter_banner'>Twitter Banner</option>
         <option value='facebook_banner'>Facebook Banner</option>
         <option value='opensea_banner'>Opensea Banner</option>
+        <option value='square'>Square</option>
+        <option value='pillar'>Pillar</option>
       </select>
       <select name='theme' id='theme' onChange={themeChange}>
         {themes
