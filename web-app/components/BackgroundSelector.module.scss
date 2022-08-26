@@ -1,0 +1,62 @@
+.customBackgroundWrapper {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  .uploadButton {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 0.8em;
+    padding: 3px;
+    border-radius: 50%;
+    color: black;
+    border: 3px solid rgb(113, 112, 112);
+    &:hover {
+      border: 3px solid rgb(162, 161, 161);
+      cursor: pointer;
+    }
+  }
+
+  .colorButton {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid rgb(113, 112, 112);
+
+    &:hover {
+      border: 3px solid rgb(162, 161, 161);
+      cursor: pointer;
+    }
+
+    .colorSelector {
+      z-index: 10;
+      padding: 8px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(73, 70, 70);
+      position: absolute;
+      top: 30px;
+      right: 0;
+
+      &.hide {
+        display: none;
+      }
+
+      .hexWrapper {
+        text-align: center;
+        margin: 15px;
+        color: white;
+
+        input {
+          width: 150px;
+          font-size: 1em;
+          text-align: center;
+          font-family: 'Courier New', Courier, monospace;
+        }
+      }
+    }
+  }
+}

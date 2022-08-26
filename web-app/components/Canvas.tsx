@@ -3,8 +3,14 @@ import { ITheme } from '../model/Theme';
 import domtoimage from 'dom-to-image';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faImage } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDownload,
+  faImage,
+  faRefresh,
+} from '@fortawesome/free-solid-svg-icons';
 import AvatarImage from './AvatarImage';
+import styles from './Canvas.module.scss';
+import BackgroundSelector from './BackgroundSelector';
 
 type Props = {
   data: Nft[];
@@ -14,6 +20,8 @@ type Props = {
 
 export default function BannerBase({ data, theme, onAvatarClick }: Props) {
   const [downloading, setDownloading] = useState(false);
+
+  const [customBackground, setCustomBackground] = useState({});
 
   useEffect(() => {
     if (downloading) {
@@ -42,12 +50,20 @@ export default function BannerBase({ data, theme, onAvatarClick }: Props) {
     document.body.removeChild(link);
   }
 
+  function setBackground(style: any) {
+    setCustomBackground(style);
+  }
+
   return (
     <>
       <div className={`container ${downloading ? 'printing' : ''}`}>
+        <div>
+          <BackgroundSelector onChange={setBackground} />
+        </div>
         <div className={`main-wrapper ${theme?.classNames} `}>
           <div
             id='capture'
+            style={customBackground}
             className={`backdrop ${theme?.backdrop?.imageClassName} ${
               theme?.backdrop?.classNames ?? ''
             }`}
@@ -69,12 +85,8 @@ export default function BannerBase({ data, theme, onAvatarClick }: Props) {
         </div>
 
         <div className='canvas-buttons'>
-          <button
-            disabled={downloading ? true : false}
-            className='button'
-            onClick={() => setDownloading(true)}
-          >
-            <FontAwesomeIcon icon={faImage} /> Background
+          <button className='button' onClick={() => setBackground({})}>
+            <FontAwesomeIcon icon={faRefresh} /> Default
           </button>
 
           <button
