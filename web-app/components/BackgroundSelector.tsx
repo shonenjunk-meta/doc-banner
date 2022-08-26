@@ -9,17 +9,19 @@ type Props = {
 };
 
 export default function BackgroundSelector({ onChange }: Props) {
-  const [color, setColor] = useState('#aabbcc');
+  const [color, setColor] = useState('#');
   const [bgStyle, setBgStyle] = useState({});
   const [showColorSelector, setShowColorSelector] = useState(false);
 
   useEffect(() => {
-    let style = {
-      backgroundColor: color,
-      backgroundImage: 'none',
-    };
-    setBgStyle(style);
-    onChange(style);
+    if (color !== '#') {
+      let style = {
+        backgroundColor: color,
+        backgroundImage: 'none',
+      };
+      setBgStyle(style);
+      onChange(style);
+    }
   }, [color]);
 
   function openFiles() {
