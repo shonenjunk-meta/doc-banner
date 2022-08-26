@@ -22,13 +22,39 @@ export default function BackgroundSelector({ onChange }: Props) {
     onChange(style);
   }, [color]);
 
-  function upload() {}
+  function openFiles() {
+    (document.getElementById('uploader') as HTMLInputElement).click();
+  }
+
+  function upload() {
+    var file = (document.getElementById('uploader') as HTMLInputElement)
+      .files[0];
+    var reader = new FileReader();
+    reader.onloadend = function () {
+      let style = {
+        backgroundImage: `url('${reader.result}')`,
+        backgroundSize: 'cover',
+        backgroundPositionX: 'center',
+        backgroundPositionY: 'bottom',
+      };
+      setBgStyle(style);
+      onChange(style);
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+    }
+  }
 
   return (
     <div className={styles.customBackgroundWrapper}>
-      <div className={styles.uploadButton} onClick={() => upload()}>
-        <FontAwesomeIcon icon={faImage} />
-      </div>
+      <input
+        type='file'
+        id='uploader'
+        className='hidden'
+        onChange={() => upload()}
+      />
+
       <div
         className={styles.colorButton}
         style={bgStyle}
@@ -48,6 +74,11 @@ export default function BackgroundSelector({ onChange }: Props) {
           <div className={styles.hexWrapper}>
             <span>HEX</span>
             <HexColorInput color={color} onChange={setColor} />
+          </div>
+          <div className={styles.uploadWrapper}>
+            <div className={styles.uploadButton} onClick={() => openFiles()}>
+              Upload <FontAwesomeIcon icon={faImage} />
+            </div>
           </div>
         </div>
       </div>
