@@ -14,19 +14,22 @@ export default function Home() {
   const [data, setData] = useState(getNftPlaceholders(100));
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const initialized = useRef(false);
-
-  let storageService: LocalStorageService;
+  const storageService = useRef<LocalStorageService>(null);
 
   // Retrieve all partner NFTs
   useEffect(() => {
     async function getAllNFTs() {
-      storageService = new LocalStorageService();
+      storageService.current = new LocalStorageService();
       let promises = [];
-      storageService.GetAddresses().forEach(async (standard, address) => {
-        promises.push(storageService.findNFTs(address, standard));
+      storageService.current
+        .GetAddresses()
+        .forEach(async (standard, address) => {
+          promises.push(storageService.current.findNFTs(address, standard));
+        });
+      Promise.all(promises).then(() => {
+        let newArray = [...storageService.current.getMyNFTs()];
+        setNfts(newArray);
       });
-      await Promise.all(promises);
-      setNfts(storageService.getMyNFTs());
     }
 
     if (!initialized.current) {
@@ -65,18 +68,16 @@ export default function Home() {
   };
 
   const onDownload = (src: string) => {
-    storageService = new LocalStorageService();
-    storageService.SaveDownload(src);
+    storageService.current.SaveDownload(src);
   };
 
   const updatedAddresses = async () => {
     let promises = [];
-    storageService = new LocalStorageService();
-    storageService.GetAddresses().forEach(async (standard, address) => {
-      promises.push(storageService.findNFTs(address, standard));
+    storageService.current.GetAddresses().forEach(async (standard, address) => {
+      promises.push(storageService.current.findNFTs(address, standard));
     });
     await Promise.all(promises);
-    setNfts(storageService.getMyNFTs());
+    setNfts(storageService.current.getMyNFTs());
   };
 
   return (

@@ -86,6 +86,14 @@ const NftSelector = (props: INftSelectorProps) => {
     }
   }
 
+  function onNftSelected(nft: Nft) {
+    props.onAvatarSelected(nft);
+    (document.getElementById('keyword') as HTMLInputElement).value = '';
+    if (initialized.current) {
+      search();
+    }
+  }
+
   return (
     <div className={classNames(styles.modal, showHideClassName)}>
       <div className={styles.buttonWrapper}>
@@ -158,16 +166,7 @@ const NftSelector = (props: INftSelectorProps) => {
               )
               .map((nft) => (
                 <div className={styles.gridItem} key={`${nft.code}#${nft.id}`}>
-                  <img
-                    src={nft.image_url}
-                    onClick={() => {
-                      props.onAvatarSelected(nft);
-                      (
-                        document.getElementById('keyword') as HTMLInputElement
-                      ).value = '';
-                      search();
-                    }}
-                  />
+                  <img src={nft.image_url} onClick={() => onNftSelected(nft)} />
                   <span>{nft.id}</span>
                 </div>
               ))
