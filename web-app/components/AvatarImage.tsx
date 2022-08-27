@@ -22,6 +22,7 @@ export default function AvatarImage({
       data-index={index}
       className={`nft ${classNames ?? ''} ${shape ?? ''}`}
       src={data[index].image_url}
+      alt={data[index].image_url}
       onClick={() => onAvatarClick(index)}
     />
   );

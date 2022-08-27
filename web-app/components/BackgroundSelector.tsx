@@ -1,6 +1,6 @@
 import styles from './BackgroundSelector.module.scss';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faL } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,11 +12,10 @@ export default function BackgroundSelector({ onChange }: Props) {
   const [color, setColor] = useState('#');
   const [bgStyle, setBgStyle] = useState({});
   const [showColorSelector, setShowColorSelector] = useState(false);
-
-  let initialized = false;
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (!initialized) {
+    if (!initialized.current) {
       window.addEventListener(
         'click',
         (e) => {
@@ -28,7 +27,7 @@ export default function BackgroundSelector({ onChange }: Props) {
         },
         true
       );
-      initialized = true;
+      initialized.current = true;
     }
   }, []);
   useEffect(() => {

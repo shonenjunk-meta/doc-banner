@@ -95,7 +95,7 @@ export const themes: ITheme[] = [
     size: 'square',
     classNames: `square`,
     backdrop: {
-      imageClassName: 'bg-grad-1',
+      classNames: 'bg-grad-1',
     },
     nfts: [
       {

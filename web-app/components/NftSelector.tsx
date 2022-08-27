@@ -10,7 +10,7 @@ import {
 import classNames from 'classnames';
 import { Nft, standard } from '../model/Nft';
 import _ from 'lodash';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { LocalStorageService } from '../services/local-storage.service';
 import { isAddress } from '../services/eth-util.service';
 
@@ -34,8 +34,8 @@ const NftSelector = (props: INftSelectorProps) => {
     id: '',
   });
   const showHideClassName = props.visible ? styles.visible : '';
+  const initialized = useRef(false);
 
-  let initialized: boolean = false;
   let storageService: LocalStorageService;
 
   // Retrieve all partner NFTs
@@ -47,9 +47,9 @@ const NftSelector = (props: INftSelectorProps) => {
       setShowWallet(arrayWallets.length === 0 ? true : false);
     }
 
-    if (!initialized) {
+    if (!initialized.current) {
       getWallets();
-      initialized = true;
+      initialized.current = true;
     }
   }, []);
 

@@ -1,6 +1,8 @@
 import { faTrash, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import { LocalStorageService } from '../services/local-storage.service';
 import styles from './downloads.module.scss';
 
@@ -11,24 +13,21 @@ interface DownloadedFile {
 
 export default function Downloads() {
   const [downloads, setDownloads] = useState([]);
-
-  let initialized: boolean = false;
-  let storageService: LocalStorageService;
+  const initialized = useRef(false);
 
   // Retrieve all partner NFTs
   useEffect(() => {
-    if (!initialized) {
+    if (!initialized.current) {
       let dls: DownloadedFile[] = [];
-      storageService = new LocalStorageService();
-      storageService.GetDownloads().forEach((value, key) => {
+      let storageService = new LocalStorageService();
+      storageService.GetDownloads()?.forEach((value, key) => {
         dls.push({
           id: key,
           src: value,
         });
       });
-      console.log(dls);
       setDownloads(dls);
-      initialized = true;
+      initialized.current = true;
     }
   }, []);
 
@@ -42,34 +41,45 @@ export default function Downloads() {
   }
 
   function removeDownload(id) {
-    storageService = new LocalStorageService();
+    let storageService = new LocalStorageService();
     storageService.RemoveDownload(id);
-    initialized = false;
+    let downloadsCopy = [...downloads];
+    let index = downloadsCopy.findIndex((item) => item.id === id);
+    downloadsCopy.splice(index, 1);
+    setDownloads(downloadsCopy);
   }
 
   return (
     <div className={styles.downloadsWrapper}>
       <h1>Download History</h1>
       <div className={styles.itemsWrapper}>
-        {downloads.map((download: DownloadedFile) => (
-          <div className={styles.itemWrapper} key={`${download.id}`}>
-            <img src={download.src} />
-            <div className={styles.buttonWrapper}>
-              <button
-                className='button success'
-                onClick={() => downloadUri(download.src, download.id + '.png')}
-              >
-                <FontAwesomeIcon icon={faDownload} />
-              </button>
-              <button
-                className='button danger'
-                onClick={() => removeDownload(download.id)}
-              >
-                <FontAwesomeIcon icon={faTrash} />
-              </button>
+        {downloads.length === 0 ? (
+          <p>
+            No downloads yet.<Link href='/'>Let&apos;s create one.</Link>
+          </p>
+        ) : (
+          downloads.map((download: DownloadedFile) => (
+            <div className={styles.itemWrapper} key={download.id}>
+              <img src={download.src} alt={download.id.toString()} />
+              <div className={styles.buttonWrapper}>
+                <button
+                  className='button success'
+                  onClick={() =>
+                    downloadUri(download.src, download.id + '.png')
+                  }
+                >
+                  <FontAwesomeIcon icon={faDownload} />
+                </button>
+                <button
+                  className='button danger'
+                  onClick={() => removeDownload(download.id)}
+                >
+                  <FontAwesomeIcon icon={faTrash} />
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Canvas from '../components/Canvas';
 import LayoutSelector from '../components/LayoutSelector';
 import NftSelector from '../components/NftSelector';
@@ -13,8 +13,8 @@ export default function Home() {
   const [visibleModal, setModalVisible] = useState(false);
   const [data, setData] = useState(getNftPlaceholders(100));
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const initialized = useRef(false);
 
-  let initialized: boolean = false;
   let storageService: LocalStorageService;
 
   // Retrieve all partner NFTs
@@ -29,9 +29,9 @@ export default function Home() {
       setNfts(storageService.getMyNFTs());
     }
 
-    if (!initialized) {
+    if (!initialized.current) {
       getAllNFTs();
-      initialized = true;
+      initialized.current = true;
     }
   }, []);
 
@@ -81,7 +81,7 @@ export default function Home() {
 
   return (
     <div className='text-center'>
-      <h1>Let's Create!</h1>
+      <h1>Let&apos;s Create!</h1>
       <LayoutSelector themeUpdated={themeUpdated} />
 
       <Canvas

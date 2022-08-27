@@ -78,6 +78,7 @@ export default function Canvas({
                     index={index}
                     classNames={item.classNames}
                     shape={item.shape}
+                    onStickerClick={() => {}}
                   />
                 ))}
             {!theme || theme.nfts.length === 0
@@ -101,6 +102,7 @@ export default function Canvas({
                     index={index}
                     classNames={item.classNames}
                     shape={item.shape}
+                    onStickerClick={() => {}}
                   />
                 ))}
           </div>

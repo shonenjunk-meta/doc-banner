@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ITheme } from '../model/Theme';
 import { themes } from '../services/Themes';
 import styles from './LayoutSelector.module.scss';
@@ -12,10 +12,10 @@ const LayoutSelector = ({ themeUpdated }: Props) => {
     size: 'twitter_banner',
     themeId: '',
   });
-  let initialized = false;
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (!initialized) {
+    if (!initialized.current) {
       const size = document.getElementById('size') as HTMLSelectElement;
       const filteredThemes = themes.filter(
         (theme) => theme.size === size.value
@@ -26,7 +26,7 @@ const LayoutSelector = ({ themeUpdated }: Props) => {
       });
       themeChange();
     }
-    initialized = true;
+    initialized.current = true;
   }, []);
 
   function sizeChange() {

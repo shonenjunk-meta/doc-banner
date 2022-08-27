@@ -20,6 +20,7 @@ export default function StickerImage({
       data-index={index}
       className={`nft ${classNames ?? ''} ${shape ?? ''}`}
       src={src.src}
+      alt={src.src}
       onClick={() => onStickerClick(index)}
     />
   );
