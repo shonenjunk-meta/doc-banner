@@ -38,6 +38,14 @@
   }
 }
 
+@mixin add-deg-rotate($argument) {
+  $number: $argument;
+
+  &--#{$number} {
+    transform: rotate(unquote($argument + 'deg'));
+  }
+}
+
 @mixin add-percent-height($argument) {
   $number: $argument;
 

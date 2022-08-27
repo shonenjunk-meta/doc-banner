@@ -85,7 +85,7 @@ export default function Canvas({
               ? ''
               : theme.nfts.map((item, index) => (
                   <AvatarImage
-                    key={index}
+                    key={index + data[index].id}
                     data={data}
                     index={index}
                     classNames={item.classNames}

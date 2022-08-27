@@ -16,7 +16,7 @@ export const themes: ITheme[] = [
     },
     bgStickers: [
       {
-        classNames: 'height--50 top--40 left--60 ',
+        classNames: 'height--50 top--30 left--60 rotate--35',
         shape: 'circle',
         src: StickerProvider.sjNftLa2022Poap,
       },
@@ -37,9 +37,14 @@ export const themes: ITheme[] = [
     ],
     fgStickers: [
       {
-        classNames: 'height--50 top--40 left--80 ',
+        classNames: 'height--50 top---10 left--33 rotate--68',
         shape: 'circle',
         src: StickerProvider.sjNftLa2022Poap,
+      },
+      {
+        classNames: 'height--50 top--35 left---5 rotate--329',
+        shape: 'circle',
+        src: StickerProvider.sjNftNyc2022Poap,
       },
     ],
   },

@@ -55,7 +55,7 @@ export default function Downloads() {
       <div className={styles.itemsWrapper}>
         {downloads.length === 0 ? (
           <p>
-            No downloads yet.<Link href='/'>Let&apos;s create one.</Link>
+            No downloads yet.<Link href='/'> Let&apos;s create one.</Link>
           </p>
         ) : (
           downloads.map((download: DownloadedFile) => (

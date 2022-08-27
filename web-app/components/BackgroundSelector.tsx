@@ -30,6 +30,7 @@ export default function BackgroundSelector({ onChange }: Props) {
       initialized.current = true;
     }
   }, []);
+
   useEffect(() => {
     if (color !== '#') {
       let style = {

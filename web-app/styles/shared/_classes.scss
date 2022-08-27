@@ -17,7 +17,8 @@
   background-image: linear-gradient(-180deg, #252827, #262b29);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Bebas Neue', 'Courier New', Courier, monospace;
+  letter-spacing: 3px;
   cursor: pointer;
   display: inline-block;
   height: 44px;
@@ -90,6 +91,12 @@
 .hidden {
   visibility: hidden;
   height: 0;
+}
+
+.rotate {
+  @for $i from 1 through 360 {
+    @include add-deg-rotate($i);
+  }
 }
 
 .height {

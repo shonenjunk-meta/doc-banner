@@ -9,6 +9,14 @@ export default function Document() {
           href='https://fonts.googleapis.com/css?family=Poppins:400,700&display=optional'
           rel='stylesheet'
         ></link>
+        <link
+          href='https://fonts.googleapis.com/css?family=Bebas Neue:400,700&display=optional'
+          rel='stylesheet'
+        ></link>
+        <link
+          href='https://fonts.googleapis.com/css?family=Khula:400,700&display=optional'
+          rel='stylesheet'
+        ></link>
       </Head>
       <body>
         <Main />
