@@ -172,6 +172,37 @@ export const themes: ITheme[] = [
       },
     ],
   },
+  {
+    id: 'erc721_sj_6',
+    name: 'SJ Chikyuu Sentai',
+    size: 'square',
+    classNames: `square`,
+    backdrop: {
+      classNames: `bg-sj-thinrays-blend ${styles.sj_chikyuu_sentai}`,
+    },
+    nfts: [
+      {
+        classNames: `height--100 top--0 left---40 ${styles.split_3_of_5}`,
+        shape: '',
+      },
+      {
+        classNames: `height--100 top--0 left---20 ${styles.split_3_of_5}`,
+        shape: '',
+      },
+      {
+        classNames: `height--100 top--0 left--0 ${styles.split_3_of_5}`,
+        shape: '',
+      },
+      {
+        classNames: `height--100 top--0 left--20 ${styles.split_3_of_5}`,
+        shape: '',
+      },
+      {
+        classNames: `height--100 top--0 left--40 ${styles.split_3_of_5}`,
+        shape: '',
+      },
+    ],
+  },
   /**
    * Wize Fellaz Theme
    * */

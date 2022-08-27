@@ -26,7 +26,8 @@ export default function Downloads() {
           src: value,
         });
       });
-      setDownloads(dls);
+
+      setDownloads(dls.reverse());
       initialized.current = true;
     }
   }, []);
@@ -52,6 +53,7 @@ export default function Downloads() {
   return (
     <div className={styles.downloadsWrapper}>
       <h1>Download History</h1>
+      <h3>{`${downloads.length}/6`}</h3>
       <div className={styles.itemsWrapper}>
         {downloads.length === 0 ? (
           <p>

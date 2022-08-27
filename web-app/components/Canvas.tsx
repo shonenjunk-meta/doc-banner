@@ -29,7 +29,7 @@ export default function Canvas({
   useEffect(() => {
     if (downloading) {
       domtoimage
-        .toPng(document.querySelector('#capture'))
+        .toPng(document.querySelector('#capture'), { width: 1450 })
         .then(function (dataUrl) {
           var img = new Image();
           img.src = dataUrl;

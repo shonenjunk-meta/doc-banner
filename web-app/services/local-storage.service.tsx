@@ -41,10 +41,14 @@ export class LocalStorageService {
 
   public SaveDownload(src: string) {
     this.downloads.set(new Date().getTime(), src);
-    localStorage.setItem(
-      'downloads',
-      JSON.stringify(Array.from(this.downloads.entries()))
-    );
+    try {
+      localStorage.setItem(
+        'downloads',
+        JSON.stringify(Array.from(this.downloads.entries()))
+      );
+    } catch {
+      console.log('Reached max limit of saved images.');
+    }
   }
 
   public RemoveDownload(id: number) {

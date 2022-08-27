@@ -57,7 +57,7 @@ const LayoutSelector = ({ themeUpdated }: Props) => {
         <option value='facebook_banner'>Facebook Banner</option>
         <option value='opensea_banner'>Opensea Banner</option>
         <option value='square'>Square</option>
-        <option value='pillar'>Pillar</option>
+        {/* <option value='pillar'>Pillar</option> */}
       </select>
       <select name='theme' id='theme' onChange={themeChange}>
         {themes
