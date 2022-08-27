@@ -35,14 +35,13 @@ const NftSelector = (props: INftSelectorProps) => {
   });
   const showHideClassName = props.visible ? styles.visible : '';
   const initialized = useRef(false);
-
-  let storageService: LocalStorageService;
+  const storageService = useRef<LocalStorageService>(null);
 
   // Retrieve all partner NFTs
   useEffect(() => {
     async function getWallets() {
-      storageService = new LocalStorageService();
-      let arrayWallets = Array.from(storageService.GetAddresses());
+      storageService.current = new LocalStorageService();
+      let arrayWallets = Array.from(storageService.current.GetAddresses());
       setWallets(arrayWallets);
       setShowWallet(arrayWallets.length === 0 ? true : false);
     }
@@ -72,9 +71,8 @@ const NftSelector = (props: INftSelectorProps) => {
   async function addAddress() {
     const newAddress = await navigator.clipboard.readText();
     if (isAddress(newAddress.toLowerCase())) {
-      let storageService: LocalStorageService = new LocalStorageService();
-      storageService.AddAddress(newAddress);
-      setWallets(Array.from(storageService.GetAddresses()));
+      storageService.current.AddAddress(newAddress);
+      setWallets(Array.from(storageService.current.GetAddresses()));
       props.updatedAddresses();
       setShowWallet(false);
     }
@@ -82,9 +80,8 @@ const NftSelector = (props: INftSelectorProps) => {
 
   function removeAddress(type: standard, address: string) {
     if (isAddress(address.toLowerCase())) {
-      let storageService: LocalStorageService = new LocalStorageService();
-      storageService.RemoveAddress(type, address);
-      setWallets(Array.from(storageService.GetAddresses()));
+      storageService.current.RemoveAddress(type, address);
+      setWallets(Array.from(storageService.current.GetAddresses()));
       props.updatedAddresses();
     }
   }

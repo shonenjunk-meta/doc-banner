@@ -16,11 +16,16 @@ export default function AvatarImage({
   shape = '',
   onAvatarClick,
 }: Props) {
+  let classes = `nft ${classNames ?? ''} ${shape ?? ''}`;
+  if (!data[index].id.startsWith('-')) {
+    classes += ' stamp';
+  }
+
   return (
     <img
       key={index}
       data-index={index}
-      className={`nft ${classNames ?? ''} ${shape ?? ''}`}
+      className={classes}
       src={data[index].image_url}
       alt={data[index].image_url}
       onClick={() => onAvatarClick(index)}

@@ -1,7 +1,8 @@
 @import '../styles/shared/core';
 
 .modal {
-  background-color: black;
+  background-color: rgb(42, 48, 54);
+  color: whitesmoke;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -101,11 +102,11 @@
       img {
         width: 100px;
         height: auto;
-        border-radius: 50%;
-        border: solid 4px transparent;
 
         &:hover {
-          border: solid 4px lime;
+          cursor: pointer;
+          box-shadow: 0 10px 16px 0 rgba(8, 207, 38, 0.2),
+            0 6px 20px 0 rgba(6, 167, 30, 0.19) !important;
         }
       }
       span {

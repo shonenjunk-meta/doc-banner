@@ -100,7 +100,7 @@ export default function Canvas({
                     key={index}
                     src={item.src}
                     index={index}
-                    classNames={item.classNames}
+                    classNames={item.classNames + ' stamp'}
                     shape={item.shape}
                     onStickerClick={() => {}}
                   />
