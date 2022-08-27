@@ -11,9 +11,9 @@ export default function Nav() {
       <Link href='/'>
         <a className={currentRoute === '/' ? styles.active : ''}>Create</a>
       </Link>
-      <Link href='/history'>
-        <a className={currentRoute === '/history' ? styles.active : ''}>
-          History
+      <Link href='/downloads'>
+        <a className={currentRoute === '/downloads' ? styles.active : ''}>
+          Downloads
         </a>
       </Link>
     </nav>

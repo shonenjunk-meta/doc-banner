@@ -2,7 +2,7 @@ import styles from './BackgroundSelector.module.scss';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImage } from '@fortawesome/free-solid-svg-icons';
+import { faImage, faL } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   onChange?: ({}) => void;
@@ -13,6 +13,24 @@ export default function BackgroundSelector({ onChange }: Props) {
   const [bgStyle, setBgStyle] = useState({});
   const [showColorSelector, setShowColorSelector] = useState(false);
 
+  let initialized = false;
+
+  useEffect(() => {
+    if (!initialized) {
+      window.addEventListener(
+        'click',
+        (e) => {
+          let target = e.target as Element;
+
+          if (target.closest(`.${styles.colorSelector}`) === null) {
+            setShowColorSelector(false);
+          }
+        },
+        true
+      );
+      initialized = true;
+    }
+  }, []);
   useEffect(() => {
     if (color !== '#') {
       let style = {
@@ -63,12 +81,12 @@ export default function BackgroundSelector({ onChange }: Props) {
         onClick={() => setShowColorSelector(!showColorSelector)}
       >
         <div
-          className={`${styles.colorSelector} ${
-            showColorSelector ? '' : styles.hide
-          }`}
           onClick={(e) => {
             e.stopPropagation();
           }}
+          className={`${styles.colorSelector} ${
+            showColorSelector ? '' : styles.hide
+          }`}
         >
           <div>
             <HexColorPicker color={color} onChange={setColor} />

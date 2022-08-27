@@ -8,13 +8,13 @@ export type ThemeSize =
   | 'pillar';
 
 export interface IThemeImage {
-  imageClassName?: string;
+  src?: StaticImageData;
   classNames?: string;
+  shape?: string;
 }
 
 export interface IThemeNft {
   classNames?: string;
-  imageClassNames?: string;
   shape?: string;
 }
 

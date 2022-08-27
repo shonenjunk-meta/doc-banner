@@ -1,4 +1,5 @@
 import { ITheme } from '../model/Theme';
+import { StickerProvider } from './image.service';
 import styles from './Themes.module.scss';
 
 export const themes: ITheme[] = [
@@ -11,12 +12,18 @@ export const themes: ITheme[] = [
     size: 'twitter_banner',
     classNames: 'twitter-banner',
     backdrop: {
-      imageClassName: 'bg-wfnh',
-      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+      classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
+    bgStickers: [
+      {
+        classNames: 'height--50 top--40 left--60 ',
+        shape: 'circle',
+        src: StickerProvider.sjNftLa2022Poap,
+      },
+    ],
     nfts: [
       {
-        classNames: 'height--80 top--10 left--5',
+        classNames: 'height--80 top--10 left--5 ',
         shape: 'chevron-left',
       },
       {
@@ -28,6 +35,13 @@ export const themes: ITheme[] = [
         shape: 'chevron-left',
       },
     ],
+    fgStickers: [
+      {
+        classNames: 'height--50 top--40 left--80 ',
+        shape: 'circle',
+        src: StickerProvider.sjNftLa2022Poap,
+      },
+    ],
   },
   {
     id: 'erc721_sj_2',
@@ -35,8 +49,7 @@ export const themes: ITheme[] = [
     size: 'facebook_banner',
     classNames: 'facebook-banner',
     backdrop: {
-      imageClassName: 'bg-wfnh',
-      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+      classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
     nfts: [
       {
@@ -59,8 +72,7 @@ export const themes: ITheme[] = [
     size: 'opensea_banner',
     classNames: 'opensea-banner',
     backdrop: {
-      imageClassName: 'bg-wfnh',
-      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+      classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
     nfts: [
       {
@@ -142,7 +154,7 @@ export const themes: ITheme[] = [
     size: 'square',
     classNames: `square`,
     backdrop: {
-      imageClassName: 'bg-sj-thinrays-blend',
+      classNames: 'bg-sj-thinrays-blend',
     },
     nfts: [
       {
@@ -150,7 +162,7 @@ export const themes: ITheme[] = [
         shape: 'circle',
       },
       {
-        classNames: `height--80 top--10 left--50 ${styles.split_2_of_2}`,
+        classNames: `height--80 top--10 left--10 ${styles.split_2_of_2}`,
         shape: 'circle',
       },
     ],
@@ -158,4 +170,25 @@ export const themes: ITheme[] = [
   /**
    * Wize Fellaz Theme
    * */
+  {
+    id: 'erc721_wf_1',
+    name: 'WF Lobby',
+    size: 'twitter_banner',
+    classNames: 'twitter-banner',
+    backdrop: {
+      classNames: 'bg-wflobby bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+    },
+
+    nfts: [
+      {
+        classNames: 'height--23 top--21 left--24 ',
+      },
+      {
+        classNames: 'height--41 top--13 left--43',
+      },
+      {
+        classNames: 'height--23 top--21 left--68',
+      },
+    ],
+  },
 ];

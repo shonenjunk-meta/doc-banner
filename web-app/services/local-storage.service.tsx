@@ -1,13 +1,14 @@
-import { JUNKIES_DATA } from '../data/junkies';
 import { Nft, standard, tokenCode } from '../model/Nft';
 
 export class LocalStorageService {
   private addresses: Map<string, standard> = new Map<string, standard>();
+  private downloads: Map<number, string> = new Map<number, string>();
   private myNFTs: Nft[] = [];
   private completedAddress: string[] = [];
 
   public constructor() {
     this.getAddressesFromStorage();
+    this.getDownloadsFromStorage();
   }
 
   public AddAddress(address: string) {
@@ -36,6 +37,28 @@ export class LocalStorageService {
 
   public GetAddresses(): Map<string, standard> {
     return this.addresses;
+  }
+
+  public SaveDownload(src: string) {
+    this.downloads.set(new Date().getTime(), src);
+    localStorage.setItem(
+      'downloads',
+      JSON.stringify(Array.from(this.downloads.entries()))
+    );
+  }
+
+  public RemoveDownload(id: number) {
+    if (this.downloads.has(id)) {
+      this.downloads.delete(id);
+      localStorage.setItem(
+        'downloads',
+        JSON.stringify(Array.from(this.downloads.entries()))
+      );
+    }
+  }
+
+  public GetDownloads(): Map<number, string> {
+    return this.downloads;
   }
 
   public getMyNFTs(): Nft[] {
@@ -67,7 +90,7 @@ export class LocalStorageService {
     let erc721WhiteList: string[] = [
       'ERC721_SJ',
       'ERC721_OCMONK',
-      //'ERC721#WFNH-BE',
+      'ERC721_WFNH-BE',
     ];
 
     await fetch(
@@ -109,6 +132,12 @@ export class LocalStorageService {
     let addressesMap = localStorage.getItem('addresses');
     try {
       this.addresses = new Map(JSON.parse(addressesMap));
+    } catch {}
+  }
+  private getDownloadsFromStorage() {
+    let downloadsMap = localStorage.getItem('downloads');
+    try {
+      this.downloads = new Map(JSON.parse(downloadsMap));
     } catch {}
   }
 }

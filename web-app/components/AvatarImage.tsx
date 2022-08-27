@@ -13,19 +13,16 @@ export default function AvatarImage({
   data,
   index,
   classNames = '',
-  imageClassNames = '',
   shape = '',
   onAvatarClick,
 }: Props) {
   return (
-    <div key={index} className={`absolute ${classNames ?? ''}`}>
-      <img
-        key={index}
-        data-index={index}
-        className={`nft ${imageClassNames ?? ''} ${shape ?? ''}`}
-        src={data[index].image_url}
-        onClick={() => onAvatarClick(index)}
-      />
-    </div>
+    <img
+      key={index}
+      data-index={index}
+      className={`nft ${classNames ?? ''} ${shape ?? ''}`}
+      src={data[index].image_url}
+      onClick={() => onAvatarClick(index)}
+    />
   );
 }

@@ -3,22 +3,25 @@ import { ITheme } from '../model/Theme';
 import domtoimage from 'dom-to-image';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faDownload,
-  faImage,
-  faRefresh,
-} from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faRefresh } from '@fortawesome/free-solid-svg-icons';
 import AvatarImage from './AvatarImage';
 import styles from './Canvas.module.scss';
 import BackgroundSelector from './BackgroundSelector';
+import StickerImage from './StickerImage';
 
 type Props = {
   data: Nft[];
   theme: ITheme;
   onAvatarClick?: (index: number) => void;
+  onDownload?: (src: string) => void;
 };
 
-export default function BannerBase({ data, theme, onAvatarClick }: Props) {
+export default function Canvas({
+  data,
+  theme,
+  onAvatarClick,
+  onDownload,
+}: Props) {
   const [downloading, setDownloading] = useState(false);
 
   const [customBackground, setCustomBackground] = useState({});
@@ -31,7 +34,7 @@ export default function BannerBase({ data, theme, onAvatarClick }: Props) {
           var img = new Image();
           img.src = dataUrl;
           downloadURI(dataUrl, `${theme.name}.png`);
-
+          onDownload(dataUrl);
           setDownloading(false);
         })
         .catch(function (error) {
@@ -64,10 +67,19 @@ export default function BannerBase({ data, theme, onAvatarClick }: Props) {
           <div
             id='capture'
             style={customBackground}
-            className={`backdrop ${theme?.backdrop?.imageClassName} ${
-              theme?.backdrop?.classNames ?? ''
-            }`}
+            className={`backdrop ${theme?.backdrop?.classNames ?? ''}`}
           >
+            {!theme || !theme.bgStickers || theme.bgStickers.length === 0
+              ? ''
+              : theme.bgStickers.map((item, index) => (
+                  <StickerImage
+                    key={index}
+                    src={item.src}
+                    index={index}
+                    classNames={item.classNames}
+                    shape={item.shape}
+                  />
+                ))}
             {!theme || theme.nfts.length === 0
               ? ''
               : theme.nfts.map((item, index) => (
@@ -76,9 +88,19 @@ export default function BannerBase({ data, theme, onAvatarClick }: Props) {
                     data={data}
                     index={index}
                     classNames={item.classNames}
-                    imageClassNames={item.imageClassNames}
                     shape={item.shape}
                     onAvatarClick={onAvatarClick}
+                  />
+                ))}
+            {!theme || !theme.fgStickers || theme.fgStickers.length === 0
+              ? ''
+              : theme.fgStickers.map((item, index) => (
+                  <StickerImage
+                    key={index}
+                    src={item.src}
+                    index={index}
+                    classNames={item.classNames}
+                    shape={item.shape}
                   />
                 ))}
           </div>

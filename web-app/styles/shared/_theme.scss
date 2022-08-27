@@ -134,6 +134,7 @@
 }
 
 .backdrop {
+  overflow: hidden;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -142,13 +143,17 @@
 }
 
 .nft {
-  position: relative;
+  position: absolute;
   height: auto;
   max-width: 100%;
   max-height: 100%;
 
   &:hover {
     cursor: pointer;
+  }
+
+  &.sticker {
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
   }
 }
 

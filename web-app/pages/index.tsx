@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import BannerBase from '../components/Canvas';
+import Canvas from '../components/Canvas';
 import LayoutSelector from '../components/LayoutSelector';
 import NftSelector from '../components/NftSelector';
 import { Nft } from '../model/Nft';
@@ -64,6 +64,11 @@ export default function Home() {
     hideNftSelector();
   };
 
+  const onDownload = (src: string) => {
+    storageService = new LocalStorageService();
+    storageService.SaveDownload(src);
+  };
+
   const updatedAddresses = async () => {
     let promises = [];
     storageService = new LocalStorageService();
@@ -75,10 +80,16 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className='text-center'>
+      <h1>Let's Create!</h1>
       <LayoutSelector themeUpdated={themeUpdated} />
 
-      <BannerBase data={data} onAvatarClick={onAvatarClick} theme={theme} />
+      <Canvas
+        data={data}
+        onAvatarClick={onAvatarClick}
+        onDownload={onDownload}
+        theme={theme}
+      />
 
       <NftSelector
         nfts={nfts}

@@ -1,4 +1,5 @@
 import { JUNKIES_DATA } from '../../../data/junkies';
+import { WIZEFELLAS_DATA } from '../../../data/wfs';
 import { tokenCode } from '../../../model/Nft';
 
 export default async function handler(req, res) {
@@ -21,5 +22,7 @@ function getImageUrl(code: tokenCode, id: string): string {
       return `https://static.shinji.xyz/unit-00/nft-images/${
         JUNKIES_DATA[parseInt(id)].hash
       }.png`;
+    case 'ERC721_WFNH-BE':
+      return WIZEFELLAS_DATA[id];
   }
 }
