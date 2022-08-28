@@ -6,7 +6,7 @@ import styles from './Footer.module.scss';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <h5>From the community for the community</h5>
+      <h5>From the community of</h5>
       <div className={styles.footerLogos}>
         <div>
           <Link href='https://shonenjunk.xyz/'>

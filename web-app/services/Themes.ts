@@ -213,13 +213,13 @@ export const themes: ITheme[] = [
     backdrop: {
       classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
-    bgStickers: [
-      {
-        classNames: 'height--50 top--30 left--60 rotate--35',
-        shape: 'circle',
-        src: StickerProvider.sjNftLa2022Poap,
-      },
-    ],
+    // bgStickers: [
+    //   {
+    //     classNames: 'height--50 top--30 left--60 rotate--35',
+    //     shape: 'circle',
+    //     src: StickerProvider.sjNftLa2022Poap,
+    //   },
+    // ],
     nfts: [
       {
         classNames: 'height--80 top--10 left--5 ',
@@ -234,18 +234,18 @@ export const themes: ITheme[] = [
         shape: 'chevron-left',
       },
     ],
-    fgStickers: [
-      {
-        classNames: 'height--50 top---10 left--33 rotate--68',
-        shape: 'circle',
-        src: StickerProvider.sjNftLa2022Poap,
-      },
-      {
-        classNames: 'height--50 top--35 left---5 rotate--329',
-        shape: 'circle',
-        src: StickerProvider.sjNftNyc2022Poap,
-      },
-    ],
+    // fgStickers: [
+    //   {
+    //     classNames: 'height--50 top---10 left--33 rotate--68',
+    //     shape: 'circle',
+    //     src: StickerProvider.sjNftLa2022Poap,
+    //   },
+    //   {
+    //     classNames: 'height--50 top--35 left---5 rotate--329',
+    //     shape: 'circle',
+    //     src: StickerProvider.sjNftNyc2022Poap,
+    //   },
+    // ],
   },
   {
     id: 'erc721_sj_2',

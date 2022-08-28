@@ -4,14 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { LocalStorageService } from '../services/local-storage.service';
-import styles from './downloads.module.scss';
+import styles from './history.module.scss';
 
 interface DownloadedFile {
   id: number;
   src: string;
 }
 
-export default function Downloads() {
+export default function History() {
   const [downloads, setDownloads] = useState([]);
   const initialized = useRef(false);
 
@@ -53,11 +53,11 @@ export default function Downloads() {
   return (
     <div className={styles.downloadsWrapper}>
       <h1>Download History</h1>
-      <h3>{`${downloads.length}/6`}</h3>
+      <h3>{`${downloads.length} found`}</h3>
       <div className={styles.itemsWrapper}>
         {downloads.length === 0 ? (
           <p>
-            No downloads yet.<Link href='/'> Let&apos;s create one.</Link>
+            No history yet.<Link href='/'> Let&apos;s create one.</Link>
           </p>
         ) : (
           downloads.map((download: DownloadedFile) => (

@@ -9,16 +9,27 @@
   color: whitesmoke;
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 
+  h1 {
+    background: -webkit-linear-gradient(#ff0, #c850c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 15px;
+  }
+
   a {
     font-family: 'Bebas Neue';
     color: whitesmoke;
-    font-size: 1.2em;
-    padding: 18px 20px;
+    font-size: 1em;
+    padding: 20px;
 
     &:hover,
     &.active {
       color: whitesmoke;
-      background-color: #28d7f2;
+      background-color: #0093e9;
+      background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
     }
   }
 }
