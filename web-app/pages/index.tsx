@@ -72,12 +72,16 @@ export default function Home() {
   };
 
   const updatedAddresses = async () => {
+    storageService.current = new LocalStorageService();
     let promises = [];
     storageService.current.GetAddresses().forEach(async (standard, address) => {
       promises.push(storageService.current.findNFTs(address, standard));
     });
-    await Promise.all(promises);
-    setNfts(storageService.current.getMyNFTs());
+
+    Promise.all(promises).then(() => {
+      let newArray = [...storageService.current.getMyNFTs()];
+      setNfts(newArray);
+    });
   };
 
   return (
