@@ -5,7 +5,8 @@ export type ThemeSize =
   | 'facebook_banner'
   | 'opensea_banner'
   | 'square'
-  | 'pillar';
+  | 'pillar'
+  | 'tower';
 
 export interface IThemeImage {
   src?: StaticImageData;

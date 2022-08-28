@@ -1,6 +1,7 @@
 @import '../styles/shared/core';
 
 .nav {
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -9,13 +10,15 @@
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
 
   a {
-    font-family: 'Khula', 'Courier New', Courier, monospace;
+    font-family: 'Khula';
     color: whitesmoke;
-    font-size: 1.2em;
+    font-size: 1.7em;
     padding: 10px 20px;
+
     &:hover,
     &.active {
-      background-color: black;
+      color: whitesmoke;
+      background-color: #28d7f2;
     }
   }
 }

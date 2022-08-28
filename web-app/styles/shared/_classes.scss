@@ -38,7 +38,7 @@
   @include break-point(small) {
     width: auto;
   }
-  z-index: 9;
+  z-index: 2;
   border: 0;
 
   em {
@@ -91,6 +91,10 @@
 .hidden {
   visibility: hidden;
   height: 0;
+}
+
+.hide {
+  display: none;
 }
 
 .rotate {

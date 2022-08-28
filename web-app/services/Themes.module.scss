@@ -8,6 +8,64 @@
   border-radius: 50%;
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 }
+
+.generic_5x8 {
+  img {
+    height: 12.5%;
+
+    &.secondRow {
+      top: 12.5%;
+    }
+    &.thirdRow {
+      top: 25%;
+    }
+    &.fourthRow {
+      top: 37.5%;
+    }
+    &.fifthRow {
+      top: 50%;
+    }
+    &.sixthRow {
+      top: 62.5%;
+    }
+    &.seventhRow {
+      top: 75%;
+    }
+    &.eigthRow {
+      top: 87.5%;
+    }
+  }
+}
+
+.generic_3x6 {
+  img {
+    &.cNft {
+      height: 16.6666%;
+    }
+    &.secondCol {
+      left: 33.3333%;
+    }
+    &.thirdCol {
+      left: 66.6666%;
+    }
+    &.secondRow {
+      top: 16.6666%;
+    }
+    &.thirdRow {
+      top: 33.3332%;
+    }
+    &.fourthRow {
+      top: 49.9998%;
+    }
+    &.fifthRow {
+      top: 66.6664%;
+    }
+    &.sixthRow {
+      top: 83.333%;
+    }
+  }
+}
+
 .sj_chikyuu_sentai {
   .split_1_of_5 {
     clip-path: polygon(0 0, 20% 0, 21% 100%, 0 100%);
@@ -23,5 +81,22 @@
   }
   .split_5_of_5 {
     clip-path: polygon(80% 0, 100% 0, 100% 100%, 80% 100%);
+  }
+}
+
+.wf_2x2 {
+  img {
+    &.first {
+      transform: rotate(20deg);
+    }
+    &.second {
+      transform: rotate(340deg);
+    }
+    &.third {
+      transform: rotate(350deg);
+    }
+    &.fourth {
+      transform: rotate(20deg);
+    }
   }
 }

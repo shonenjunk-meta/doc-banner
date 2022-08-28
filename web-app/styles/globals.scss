@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: 'Bebas Neue', 'Courier New', Courier, monospace;
   letter-spacing: 3px;
+  overflow-x: hidden;
 }
 
 a {
@@ -26,7 +27,6 @@ a {
     color-scheme: dark;
   }
   body {
-    min-height: 100vh;
     color: rgb(29, 28, 28);
     background-color: #fa8bff;
     background-image: linear-gradient(

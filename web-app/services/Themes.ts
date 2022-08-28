@@ -4,6 +4,205 @@ import styles from './Themes.module.scss';
 
 export const themes: ITheme[] = [
   /**
+   * Generic
+   */
+  {
+    id: 'generic_5x8',
+    name: 'Full 5 x 8',
+    size: 'pillar',
+    classNames: 'pillar',
+    backdrop: {
+      classNames: `${styles.generic_5x8}`,
+    },
+    nfts: [
+      {
+        classNames: 'top--0 left--0',
+      },
+      {
+        classNames: 'top--0 left--20',
+      },
+      {
+        classNames: 'top--0 left--40',
+      },
+      {
+        classNames: 'top--0 left--60',
+      },
+      {
+        classNames: 'top--0 left--80',
+      },
+      {
+        classNames: `${styles.secondRow} left--0`,
+      },
+      {
+        classNames: `${styles.secondRow} left--20`,
+      },
+      {
+        classNames: `${styles.secondRow} left--40`,
+      },
+      {
+        classNames: `${styles.secondRow} left--60`,
+      },
+      {
+        classNames: `${styles.secondRow} left--80`,
+      },
+      {
+        classNames: `${styles.thirdRow} left--0`,
+      },
+      {
+        classNames: `${styles.thirdRow} left--20`,
+      },
+      {
+        classNames: `${styles.thirdRow} left--40`,
+      },
+      {
+        classNames: `${styles.thirdRow} left--60`,
+      },
+      {
+        classNames: `${styles.thirdRow} left--80`,
+      },
+      {
+        classNames: `${styles.fourthRow} left--0`,
+      },
+      {
+        classNames: `${styles.fourthRow} left--20`,
+      },
+      {
+        classNames: `${styles.fourthRow} left--40`,
+      },
+      {
+        classNames: `${styles.fourthRow} left--60`,
+      },
+      {
+        classNames: `${styles.fourthRow} left--80`,
+      },
+      {
+        classNames: `${styles.fifthRow} left--0`,
+      },
+      {
+        classNames: `${styles.fifthRow} left--20`,
+      },
+      {
+        classNames: `${styles.fifthRow} left--40`,
+      },
+      {
+        classNames: `${styles.fifthRow} left--60`,
+      },
+      {
+        classNames: `${styles.fifthRow} left--80`,
+      },
+      {
+        classNames: `${styles.sixthRow} left--0`,
+      },
+      {
+        classNames: `${styles.sixthRow} left--20`,
+      },
+      {
+        classNames: `${styles.sixthRow} left--40`,
+      },
+      {
+        classNames: `${styles.sixthRow} left--60`,
+      },
+      {
+        classNames: `${styles.sixthRow} left--80`,
+      },
+      {
+        classNames: `${styles.seventhRow} left--0`,
+      },
+      {
+        classNames: `${styles.seventhRow} left--20`,
+      },
+      {
+        classNames: `${styles.seventhRow} left--40`,
+      },
+      {
+        classNames: `${styles.seventhRow} left--60`,
+      },
+      {
+        classNames: `${styles.seventhRow} left--80`,
+      },
+      {
+        classNames: `${styles.eigthRow} left--0`,
+      },
+      {
+        classNames: `${styles.eigthRow} left--20`,
+      },
+      {
+        classNames: `${styles.eigthRow} left--40`,
+      },
+      {
+        classNames: `${styles.eigthRow} left--60`,
+      },
+      {
+        classNames: `${styles.eigthRow} left--80`,
+      },
+    ],
+  },
+  {
+    id: 'generic_3x6',
+    name: 'Full 3 x 6',
+    size: 'tower',
+    classNames: 'tower',
+    backdrop: {
+      classNames: `${styles.generic_3x6}`,
+    },
+    nfts: [
+      {
+        classNames: `left--0 top--0 ${styles.cNft}`,
+      },
+      {
+        classNames: `left--0 ${styles.secondRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `left--0 ${styles.thirdRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `left--0 ${styles.fourthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `left--0 ${styles.fifthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `left--0 ${styles.sixthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.secondCol} top--0 ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.secondCol} ${styles.secondRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.secondCol} ${styles.thirdRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.secondCol} ${styles.fourthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.secondCol} ${styles.fifthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.secondCol} ${styles.sixthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.thirdCol} top--0 ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.thirdCol} ${styles.secondRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.thirdCol} ${styles.thirdRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.thirdCol} ${styles.fourthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.thirdCol} ${styles.fifthRow} ${styles.cNft}`,
+      },
+      {
+        classNames: `${styles.thirdCol} ${styles.sixthRow} ${styles.cNft}`,
+      },
+    ],
+  },
+  /**
    * Shonen Junk Theme
    * */
   {
@@ -224,6 +423,29 @@ export const themes: ITheme[] = [
       },
       {
         classNames: 'height--23 top--21 left--68',
+      },
+    ],
+  },
+  {
+    id: 'erc721_wf_2',
+    name: 'WF 2x2',
+    size: 'square',
+    classNames: 'square',
+    backdrop: {
+      classNames: `${styles.wf_2x2}`,
+    },
+    nfts: [
+      {
+        classNames: `${styles.first} height--50 top--0 left--0 `,
+      },
+      {
+        classNames: `${styles.second} height--50 top--0 left--50`,
+      },
+      {
+        classNames: `${styles.third} height--50 top--46 left--0`,
+      },
+      {
+        classNames: `${styles.fourth} height--50 top--43 left--50`,
       },
     ],
   },

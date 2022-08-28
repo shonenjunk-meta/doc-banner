@@ -100,7 +100,16 @@
   }
 
   &.pillar {
-    padding-top: 150%;
+    padding-top: 160%;
+    margin-bottom: 25px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &.tower {
+    padding-top: 200%;
     margin-bottom: 25px;
 
     &::after {
@@ -130,6 +139,12 @@
 
   .no-print {
     display: none;
+  }
+
+  #capture {
+    &.square {
+      max-height: 1500px;
+    }
   }
 }
 

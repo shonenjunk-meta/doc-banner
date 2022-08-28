@@ -8,6 +8,7 @@ import AvatarImage from './AvatarImage';
 import styles from './Canvas.module.scss';
 import BackgroundSelector from './BackgroundSelector';
 import StickerImage from './StickerImage';
+import Loading from './Loading';
 
 type Props = {
   data: Nft[];
@@ -59,6 +60,9 @@ export default function Canvas({
 
   return (
     <>
+      <div className={`${downloading ? '' : 'hide'}`}>
+        <Loading />
+      </div>
       <div className={`container ${downloading ? 'printing' : ''}`}>
         <div>
           <BackgroundSelector onChange={setBackground} />
