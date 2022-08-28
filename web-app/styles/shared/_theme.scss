@@ -197,6 +197,12 @@
 .point-left {
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
+.point-cave-right {
+  clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+}
+.point-cave-left {
+  clip-path: polygon(100% 0, 0 0, 25% 50%, 0 100%, 100% 100%);
+}
 .parallelogram-right {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }

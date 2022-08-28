@@ -207,7 +207,7 @@ export const themes: ITheme[] = [
    * */
   {
     id: 'erc721_sj_1',
-    name: 'SJ 3 Man Team',
+    name: 'SJ Generation-4',
     size: 'twitter_banner',
     classNames: 'twitter-banner',
     backdrop: {
@@ -222,16 +222,20 @@ export const themes: ITheme[] = [
     // ],
     nfts: [
       {
-        classNames: 'height--80 top--10 left--5 ',
-        shape: 'chevron-left',
+        classNames: 'height--100 top--0 left---3 ',
+        shape: 'point-right',
       },
       {
-        classNames: 'height--80 top--10 left--26',
-        shape: 'chevron-left',
+        classNames: 'height--100 top--0 left--21',
+        shape: 'chevron-right',
       },
       {
-        classNames: 'height--80 top--10 left--47',
-        shape: 'chevron-left',
+        classNames: 'height--100 top--0 left--45',
+        shape: 'chevron-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--69',
+        shape: 'point-cave-left',
       },
     ],
     // fgStickers: [
@@ -249,7 +253,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_sj_2',
-    name: 'SJ 3 Man Team',
+    name: 'SJ Generation-4',
     size: 'facebook_banner',
     classNames: 'facebook-banner',
     backdrop: {
@@ -257,22 +261,26 @@ export const themes: ITheme[] = [
     },
     nfts: [
       {
-        classNames: 'height--80 top--10 left--5',
-        shape: 'chevron-left',
+        classNames: 'height--100 top--0 left---3 ',
+        shape: 'point-right',
       },
       {
-        classNames: 'height--80 top--10 left--26',
-        shape: 'chevron-left',
+        classNames: 'height--100 top--0 left--21',
+        shape: 'chevron-right',
       },
       {
-        classNames: 'height--80 top--10 left--47',
-        shape: 'chevron-left',
+        classNames: 'height--100 top--0 left--45',
+        shape: 'chevron-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--69',
+        shape: 'point-cave-left',
       },
     ],
   },
   {
     id: 'erc721_sj_3',
-    name: 'SJ 3 Man Team',
+    name: 'SJ Generation-6',
     size: 'opensea_banner',
     classNames: 'opensea-banner',
     backdrop: {
@@ -280,22 +288,34 @@ export const themes: ITheme[] = [
     },
     nfts: [
       {
-        classNames: 'height--80 top--10 left--5',
-        shape: 'chevron-right',
+        classNames: 'height--100 top--0 left---7',
+        shape: 'parallelogram-right',
       },
       {
-        classNames: 'height--80 top--10 left--21',
-        shape: 'chevron-right',
+        classNames: 'height--100 top--0 left--11',
+        shape: 'parallelogram-right',
       },
       {
-        classNames: 'height--80 top--10 left--37',
-        shape: 'chevron-right',
+        classNames: 'height--100 top--0 left--29',
+        shape: 'parallelogram-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--47',
+        shape: 'parallelogram-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--65',
+        shape: 'parallelogram-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--83',
+        shape: 'parallelogram-right',
       },
     ],
   },
   {
     id: 'erc721_sj_4',
-    name: 'SJ 4x3',
+    name: 'SJ 2x2 (NFTNYC)',
     size: 'square',
     classNames: `square`,
     backdrop: {
@@ -303,58 +323,33 @@ export const themes: ITheme[] = [
     },
     nfts: [
       {
-        classNames: 'height--30 top--5 left--2',
-        shape: 'parallelogram-right',
+        classNames: 'height--46 top--2 left--2',
+        shape: 'circle',
       },
       {
-        classNames: 'height--30 top--5 left--24',
-        shape: 'parallelogram-right',
+        classNames: 'height--46 top--2 left--52',
+        shape: 'circle',
       },
       {
-        classNames: 'height--30 top--5 left--46',
-        shape: 'parallelogram-right',
+        classNames: 'height--46 top--52 left--2',
+        shape: 'circle',
       },
       {
-        classNames: 'height--30 top--5 left--68',
-        shape: 'parallelogram-right',
+        classNames: 'height--46 top--52 left--52',
+        shape: 'circle',
       },
+    ],
+    fgStickers: [
       {
-        classNames: 'height--30 top--35 left--2',
-        shape: 'parallelogram-left',
-      },
-      {
-        classNames: 'height--30 top--35 left--24',
-        shape: 'parallelogram-left',
-      },
-      {
-        classNames: 'height--30 top--35 left--46',
-        shape: 'parallelogram-left',
-      },
-      {
-        classNames: 'height--30 top--35 left--68',
-        shape: 'parallelogram-left',
-      },
-      {
-        classNames: 'height--30 top--65 left--2',
-        shape: 'parallelogram-right',
-      },
-      {
-        classNames: 'height--30 top--65 left--24',
-        shape: 'parallelogram-right',
-      },
-      {
-        classNames: 'height--30 top--65 left--46',
-        shape: 'parallelogram-right',
-      },
-      {
-        classNames: 'height--30 top--65 left--68',
-        shape: 'parallelogram-right',
+        classNames: 'height--33 top--33 left--33 rotate--329',
+        shape: 'circle',
+        src: StickerProvider.sjNftNyc2022Poap,
       },
     ],
   },
   {
     id: 'erc721_sj_5',
-    name: 'SJ Split',
+    name: 'SJ Rays Split',
     size: 'square',
     classNames: `square`,
     backdrop: {
@@ -362,11 +357,11 @@ export const themes: ITheme[] = [
     },
     nfts: [
       {
-        classNames: `height--80 top--10 left--10 ${styles.split_1_of_2}`,
+        classNames: `height--90 top--5 left--5 ${styles.split_1_of_2}`,
         shape: 'circle',
       },
       {
-        classNames: `height--80 top--10 left--10 ${styles.split_2_of_2}`,
+        classNames: `height--90 top--5 left--5 ${styles.split_2_of_2}`,
         shape: 'circle',
       },
     ],
