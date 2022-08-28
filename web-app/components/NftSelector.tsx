@@ -13,6 +13,7 @@ import _ from 'lodash';
 import { useEffect, useRef, useState } from 'react';
 import { LocalStorageService } from '../services/local-storage.service';
 import { isAddress } from '../services/eth-util.service';
+import Image from 'next/image';
 
 export interface INftSelectorProps {
   nfts: Nft[];
@@ -166,7 +167,15 @@ const NftSelector = (props: INftSelectorProps) => {
               )
               .map((nft) => (
                 <div className={styles.gridItem} key={`${nft.code}#${nft.id}`}>
-                  <img src={nft.image_url} onClick={() => onNftSelected(nft)} />
+                  <Image
+                    src={nft.image_url}
+                    alt='Github'
+                    width={100}
+                    height={100}
+                    layout='responsive'
+                    onClick={() => onNftSelected(nft)}
+                    loading='lazy'
+                  />
                   <span>{nft.id}</span>
                 </div>
               ))
