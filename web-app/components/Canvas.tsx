@@ -60,9 +60,7 @@ export default function Canvas({
 
   return (
     <>
-      <div className={`${downloading ? '' : 'hide'}`}>
-        <Loading />
-      </div>
+      <Loading show={downloading} />
       <div className={`container ${downloading ? 'printing' : ''}`}>
         <div>
           <BackgroundSelector onChange={setBackground} />

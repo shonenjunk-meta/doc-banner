@@ -7,8 +7,8 @@ export const themes: ITheme[] = [
    * Generic
    */
   {
-    id: 'generic_5x8',
-    name: 'Full 5 x 8',
+    id: 'generic_1',
+    name: 'Full 5x8',
     size: 'pillar',
     classNames: 'pillar',
     backdrop: {
@@ -138,8 +138,8 @@ export const themes: ITheme[] = [
     ],
   },
   {
-    id: 'generic_3x6',
-    name: 'Full 3 x 6',
+    id: 'generic_2',
+    name: 'Full 3x6',
     size: 'tower',
     classNames: 'tower',
     backdrop: {
@@ -202,6 +202,65 @@ export const themes: ITheme[] = [
       },
     ],
   },
+  {
+    id: 'generic_3',
+    name: 'Bordered 4x4',
+    size: 'square',
+    classNames: 'square',
+    backdrop: {
+      classNames: `${styles.generic_3_4x4}`,
+    },
+    nfts: [
+      {
+        classNames: `${styles.firstRow} ${styles.firstCol} left--2 top--2`,
+      },
+      {
+        classNames: `$${styles.firstRow} ${styles.secondCol} top--2`,
+      },
+      {
+        classNames: `${styles.firstRow} ${styles.thirdCol} top--2`,
+      },
+      {
+        classNames: `${styles.firstRow} ${styles.fourthCol} top--2`,
+      },
+      {
+        classNames: `${styles.secondRow} ${styles.firstCol} left--2`,
+      },
+      {
+        classNames: `${styles.secondRow} ${styles.secondCol}`,
+      },
+      {
+        classNames: `${styles.secondRow} ${styles.thirdCol}`,
+      },
+      {
+        classNames: `${styles.secondRow} ${styles.fourthCol}`,
+      },
+      {
+        classNames: `${styles.thirdRow} ${styles.firstCol} left--2`,
+      },
+      {
+        classNames: `${styles.thirdRow} ${styles.secondCol}`,
+      },
+      {
+        classNames: `${styles.thirdRow} ${styles.thirdCol}`,
+      },
+      {
+        classNames: `${styles.thirdRow} ${styles.fourthCol}`,
+      },
+      {
+        classNames: `${styles.fourthRow} ${styles.firstCol} left--2`,
+      },
+      {
+        classNames: `${styles.fourthRow} ${styles.secondCol}`,
+      },
+      {
+        classNames: `${styles.fourthRow} ${styles.thirdCol}`,
+      },
+      {
+        classNames: `${styles.fourthRow} ${styles.fourthCol}`,
+      },
+    ],
+  },
   /**
    * Shonen Junk Theme
    * */
@@ -211,7 +270,7 @@ export const themes: ITheme[] = [
     size: 'twitter_banner',
     classNames: 'twitter-banner',
     backdrop: {
-      classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
     // bgStickers: [
     //   {
