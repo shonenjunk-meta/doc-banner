@@ -9,7 +9,7 @@ export const themes: ITheme[] = [
   {
     id: 'generic_1',
     code: 'GENERIC',
-    name: 'Full 5x8',
+    name: 'Full Poster (5x8)',
     size: 'pillar',
     classNames: 'pillar',
     backdrop: {
@@ -141,7 +141,7 @@ export const themes: ITheme[] = [
   {
     id: 'generic_2',
     code: 'GENERIC',
-    name: 'Full 3x6',
+    name: 'Full Poster (3x6)',
     size: 'tower',
     classNames: 'tower',
     backdrop: {
@@ -207,7 +207,7 @@ export const themes: ITheme[] = [
   {
     id: 'generic_3',
     code: 'GENERIC',
-    name: 'Bordered 4x4',
+    name: 'Bordered Poster Centerpiece (4x4)',
     size: 'square',
     classNames: 'square',
     backdrop: {
@@ -270,7 +270,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_sj_1',
     code: 'ERC721_SJ',
-    name: 'SJ Generation-4',
+    name: 'SJ Twitter-B Gen-4',
     size: 'twitter_banner',
     classNames: 'twitter-banner',
     backdrop: {
@@ -317,7 +317,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_sj_2',
     code: 'ERC721_SJ',
-    name: 'SJ Generation-4',
+    name: 'SJ Facebook-B Gen-4',
     size: 'facebook_banner',
     classNames: 'facebook-banner',
     backdrop: {
@@ -345,7 +345,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_sj_3',
     code: 'ERC721_SJ',
-    name: 'SJ Generation-6',
+    name: 'SJ Opensea-B Gen-6',
     size: 'opensea_banner',
     classNames: 'opensea-banner',
     backdrop: {
@@ -381,7 +381,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_sj_4',
     code: 'ERC721_SJ',
-    name: 'SJ 2x2 (NFTNYC)',
+    name: 'SJ Poster NFTNYC (2x2)',
     size: 'square',
     classNames: `square`,
     backdrop: {
@@ -416,7 +416,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_sj_5',
     code: 'ERC721_SJ',
-    name: 'SJ Rays Split',
+    name: 'SJ PFP Split (2)',
     size: 'square',
     classNames: `square`,
     backdrop: {
@@ -436,7 +436,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_sj_6',
     code: 'ERC721_SJ',
-    name: 'SJ Chikyuu Sentai',
+    name: 'SJ Poster Chikyuu Sentai (5)',
     size: 'square',
     classNames: `square`,
     backdrop: {
@@ -471,7 +471,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_wf_1',
     code: 'ERC721_WFNH-BE',
-    name: 'WF Lobby',
+    name: 'WF Twitter-B Lobby',
     size: 'twitter_banner',
     classNames: 'twitter-banner',
     backdrop: {
@@ -493,7 +493,7 @@ export const themes: ITheme[] = [
   {
     id: 'erc721_wf_2',
     code: 'ERC721_WFNH-BE',
-    name: 'WF 2x2',
+    name: 'WF Poster Shakey (2x2)',
     size: 'square',
     classNames: 'square',
     backdrop: {
