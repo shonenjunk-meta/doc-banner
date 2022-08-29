@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { tokenCode } from './Nft';
 
 export type ThemeSize =
   | 'twitter_banner'
@@ -7,6 +8,20 @@ export type ThemeSize =
   | 'square'
   | 'pillar'
   | 'tower';
+
+export interface ITheme {
+  id: string;
+  code?: tokenCode;
+  name: string;
+  classNames: string;
+  size: ThemeSize;
+  backdrop: IThemeImage;
+  nfts: IThemeNft[];
+
+  bgStickers?: IThemeImage[];
+  fgStickers?: IThemeImage[];
+  speech?: IThemeSpeech[];
+}
 
 export interface IThemeImage {
   src?: StaticImageData;
@@ -22,17 +37,4 @@ export interface IThemeNft {
 export interface IThemeSpeech {
   dialogue: string;
   classNames?: string;
-}
-
-export interface ITheme {
-  id: string;
-  name: string;
-  classNames: string;
-  size: ThemeSize;
-  backdrop: IThemeImage;
-  nfts: IThemeNft[];
-
-  bgStickers?: IThemeImage[];
-  fgStickers?: IThemeImage[];
-  speech?: IThemeSpeech[];
 }

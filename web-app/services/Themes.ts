@@ -8,6 +8,7 @@ export const themes: ITheme[] = [
    */
   {
     id: 'generic_1',
+    code: 'GENERIC',
     name: 'Full 5x8',
     size: 'pillar',
     classNames: 'pillar',
@@ -139,6 +140,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'generic_2',
+    code: 'GENERIC',
     name: 'Full 3x6',
     size: 'tower',
     classNames: 'tower',
@@ -204,6 +206,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'generic_3',
+    code: 'GENERIC',
     name: 'Bordered 4x4',
     size: 'square',
     classNames: 'square',
@@ -266,6 +269,7 @@ export const themes: ITheme[] = [
    * */
   {
     id: 'erc721_sj_1',
+    code: 'ERC721_SJ',
     name: 'SJ Generation-4',
     size: 'twitter_banner',
     classNames: 'twitter-banner',
@@ -312,6 +316,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_sj_2',
+    code: 'ERC721_SJ',
     name: 'SJ Generation-4',
     size: 'facebook_banner',
     classNames: 'facebook-banner',
@@ -339,6 +344,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_sj_3',
+    code: 'ERC721_SJ',
     name: 'SJ Generation-6',
     size: 'opensea_banner',
     classNames: 'opensea-banner',
@@ -374,6 +380,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_sj_4',
+    code: 'ERC721_SJ',
     name: 'SJ 2x2 (NFTNYC)',
     size: 'square',
     classNames: `square`,
@@ -408,6 +415,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_sj_5',
+    code: 'ERC721_SJ',
     name: 'SJ Rays Split',
     size: 'square',
     classNames: `square`,
@@ -427,6 +435,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_sj_6',
+    code: 'ERC721_SJ',
     name: 'SJ Chikyuu Sentai',
     size: 'square',
     classNames: `square`,
@@ -461,6 +470,7 @@ export const themes: ITheme[] = [
    * */
   {
     id: 'erc721_wf_1',
+    code: 'ERC721_WFNH-BE',
     name: 'WF Lobby',
     size: 'twitter_banner',
     classNames: 'twitter-banner',
@@ -482,6 +492,7 @@ export const themes: ITheme[] = [
   },
   {
     id: 'erc721_wf_2',
+    code: 'ERC721_WFNH-BE',
     name: 'WF 2x2',
     size: 'square',
     classNames: 'square',

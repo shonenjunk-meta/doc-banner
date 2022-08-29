@@ -3,15 +3,17 @@ import { WIZEFELLAS_DATA } from '../../../data/wfs';
 import { tokenCode } from '../../../model/Nft';
 
 export default async function handler(req, res) {
-  const { code, id } = req.query;
+  return new Promise(async (resolve) => {
+    const { code, id } = req.query;
 
-  const imageUrl = getImageUrl(code, id);
-  const response = await fetch(imageUrl);
-  const blob = await (await response.blob()).arrayBuffer();
-  const file = Buffer.from(blob);
+    const imageUrl = getImageUrl(code, id);
+    const response = await fetch(imageUrl);
+    const blob = await (await response.blob()).arrayBuffer();
+    const file = Buffer.from(blob);
 
-  res.setHeader('Content-Type', 'image/jpg');
-  res.send(file);
+    res.setHeader('Content-Type', 'image/jpg');
+    res.send(file);
+  });
 }
 
 function getImageUrl(code: tokenCode, id: string): string {

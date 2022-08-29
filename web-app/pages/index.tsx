@@ -4,14 +4,17 @@ import LayoutSelector from '../components/LayoutSelector';
 import NftSelector from '../components/NftSelector';
 import { Nft } from '../model/Nft';
 import { ITheme } from '../model/Theme';
-import { getNftPlaceholders } from '../services/data.service';
+import {
+  getNftPlaceholders,
+  updateNftPlaceholders,
+} from '../services/data.service';
 import { LocalStorageService } from '../services/local-storage.service';
 
 export default function Home() {
   const [theme, setTheme] = useState(null);
   const [nfts, setNfts] = useState([] as Nft[]);
   const [visibleModal, setModalVisible] = useState(false);
-  const [data, setData] = useState(getNftPlaceholders(100));
+  const [data, setData] = useState(getNftPlaceholders(50));
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const initialized = useRef(false);
   const storageService = useRef<LocalStorageService>(null);
@@ -37,6 +40,10 @@ export default function Home() {
       initialized.current = true;
     }
   }, []);
+
+  useEffect(() => {
+    setData(updateNftPlaceholders([...data], theme));
+  }, [theme]);
 
   const showNftSelector = () => {
     setModalVisible(true);
