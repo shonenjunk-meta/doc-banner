@@ -13,6 +13,8 @@
     justify-content: space-evenly;
 
     select {
+      -webkit-appearance: none;
+      height: 40px;
       flex-grow: 1;
       margin-left: 0;
     }

@@ -29,21 +29,31 @@ export default function Canvas({
 
   useEffect(() => {
     if (downloading) {
+      generateImage().then(() => {
+        generateImage().then(() => {
+          generateImage().then((doc: string) => {
+            downloadURI(doc, `${theme.name}.png`);
+            onDownload(doc);
+            setDownloading(false);
+          });
+        });
+      });
+    }
+  }, [downloading]);
+
+  function generateImage() {
+    return new Promise((resolve) => {
       domtoimage
         .toPng(document.querySelector('#capture'), { width: 1450 })
         .then(function (dataUrl) {
-          var img = new Image();
-          img.src = dataUrl;
-          downloadURI(dataUrl, `${theme.name}.png`);
-          onDownload(dataUrl);
-          setDownloading(false);
+          return resolve(dataUrl);
         })
         .catch(function (error) {
           console.error('oops, something went wrong!', error);
           setDownloading(false);
         });
-    }
-  }, [downloading]);
+    });
+  }
 
   function downloadURI(uri, name) {
     var link = document.createElement('a');
