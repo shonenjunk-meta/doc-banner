@@ -268,34 +268,6 @@ export const themes: ITheme[] = [
    * Shonen Junk Theme
    * */
   {
-    id: 'erc721_sj_tb_1',
-    code: 'ERC721_SJ',
-    name: 'SJ Twitter-B Gen-4',
-    size: 'twitter_banner',
-    classNames: 'twitter-banner',
-    backdrop: {
-      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
-    },
-    nfts: [
-      {
-        classNames: 'height--100 top--0 left---3 ',
-        shape: 'point-right',
-      },
-      {
-        classNames: 'height--100 top--0 left--21',
-        shape: 'chevron-right',
-      },
-      {
-        classNames: 'height--100 top--0 left--45',
-        shape: 'chevron-right',
-      },
-      {
-        classNames: 'height--100 top--0 left--69',
-        shape: 'point-cave-left',
-      },
-    ],
-  },
-  {
     id: 'erc721_sj_tb_mirror',
     code: 'ERC721_SJ',
     name: 'SJ Twitter-B Mirror-3',
@@ -385,6 +357,34 @@ export const themes: ITheme[] = [
       {
         classNames: `height--70 top--12 left--33 ${styles.card}`,
         shape: '',
+      },
+    ],
+  },
+  {
+    id: 'erc721_sj_tb_1',
+    code: 'ERC721_SJ',
+    name: 'SJ Twitter-B Gen-4',
+    size: 'twitter_banner',
+    classNames: 'twitter-banner',
+    backdrop: {
+      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+    },
+    nfts: [
+      {
+        classNames: 'height--100 top--0 left---3 ',
+        shape: 'point-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--21',
+        shape: 'chevron-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--45',
+        shape: 'chevron-right',
+      },
+      {
+        classNames: 'height--100 top--0 left--69',
+        shape: 'point-cave-left',
       },
     ],
   },
