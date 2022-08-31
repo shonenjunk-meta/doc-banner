@@ -158,6 +158,21 @@
   }
 }
 
+.erc721_sj_banner_black_mirror {
+  background-color: black;
+  .logo {
+    -webkit-box-reflect: below 2px
+      linear-gradient(transparent, transparent, #0004);
+    transform-origin: center;
+  }
+  .card {
+    -webkit-box-reflect: below 2px
+      linear-gradient(transparent, transparent, #0004);
+    transform-origin: center;
+    transform: perspective(800px) rotateY(25deg);
+  }
+}
+
 .wf_2x2 {
   img {
     &.first {

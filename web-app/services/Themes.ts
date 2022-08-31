@@ -268,7 +268,7 @@ export const themes: ITheme[] = [
    * Shonen Junk Theme
    * */
   {
-    id: 'erc721_sj_1',
+    id: 'erc721_sj_tb_1',
     code: 'ERC721_SJ',
     name: 'SJ Twitter-B Gen-4',
     size: 'twitter_banner',
@@ -276,13 +276,6 @@ export const themes: ITheme[] = [
     backdrop: {
       classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
-    // bgStickers: [
-    //   {
-    //     classNames: 'height--50 top--30 left--60 rotate--35',
-    //     shape: 'circle',
-    //     src: StickerProvider.sjNftLa2022Poap,
-    //   },
-    // ],
     nfts: [
       {
         classNames: 'height--100 top--0 left---3 ',
@@ -301,18 +294,99 @@ export const themes: ITheme[] = [
         shape: 'point-cave-left',
       },
     ],
-    // fgStickers: [
-    //   {
-    //     classNames: 'height--50 top---10 left--33 rotate--68',
-    //     shape: 'circle',
-    //     src: StickerProvider.sjNftLa2022Poap,
-    //   },
-    //   {
-    //     classNames: 'height--50 top--35 left---5 rotate--329',
-    //     shape: 'circle',
-    //     src: StickerProvider.sjNftNyc2022Poap,
-    //   },
-    // ],
+  },
+  {
+    id: 'erc721_sj_tb_mirror',
+    code: 'ERC721_SJ',
+    name: 'SJ Twitter-B Mirror-3',
+    size: 'twitter_banner',
+    classNames: 'twitter-banner',
+    backdrop: {
+      classNames: `${styles.erc721_sj_banner_black_mirror}`,
+    },
+    bgStickers: [
+      {
+        classNames: `height--40 top--30 left--64 ${styles.logo}`,
+        shape: '',
+        src: StickerProvider.sjLogoBlue,
+      },
+    ],
+    nfts: [
+      {
+        classNames: `height--60 top--7 left--4 ${styles.card}`,
+        shape: '',
+      },
+      {
+        classNames: `height--60 top--7 left--40 ${styles.card}`,
+        shape: '',
+      },
+      {
+        classNames: `height--70 top--12 left--20 ${styles.card}`,
+        shape: '',
+      },
+    ],
+  },
+  {
+    id: 'erc721_sj_fb_mirror',
+    code: 'ERC721_SJ',
+    name: 'SJ Facebook-B Mirror-3',
+    size: 'facebook_banner',
+    classNames: 'facebook-banner',
+    backdrop: {
+      classNames: `${styles.erc721_sj_banner_black_mirror}`,
+    },
+    bgStickers: [
+      {
+        classNames: `height--40 top--30 left--64 ${styles.logo}`,
+        shape: '',
+        src: StickerProvider.sjLogoBlue,
+      },
+    ],
+    nfts: [
+      {
+        classNames: `height--60 top--7 left--4 ${styles.card}`,
+        shape: '',
+      },
+      {
+        classNames: `height--60 top--7 left--40 ${styles.card}`,
+        shape: '',
+      },
+      {
+        classNames: `height--70 top--12 left--20 ${styles.card}`,
+        shape: '',
+      },
+    ],
+  },
+  {
+    id: 'erc721_sj_osb_mirror',
+    code: 'ERC721_SJ',
+    name: 'SJ Opensea-B Mirror-3',
+    size: 'opensea_banner',
+    classNames: 'opensea-banner',
+    backdrop: {
+      classNames: `${styles.erc721_sj_banner_black_mirror}`,
+    },
+    bgStickers: [
+      {
+        classNames: `height--40 top--30 left--64 ${styles.logo}`,
+        shape: '',
+        src: StickerProvider.sjLogoBlue,
+      },
+    ],
+    nfts: [
+      {
+        classNames: `height--60 top--7 left--12 ${styles.card}`,
+        shape: '',
+      },
+      {
+        classNames: `height--60 top--7 left--40 ${styles.card}`,
+        shape: '',
+      },
+      {
+        classNames: `height--70 top--12 left--25 ${styles.card}`,
+        shape: '',
+      },
+    ],
   },
   {
     id: 'erc721_sj_2',
