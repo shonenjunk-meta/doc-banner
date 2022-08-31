@@ -169,7 +169,13 @@
     -webkit-box-reflect: below 2px
       linear-gradient(transparent, transparent, #0004);
     transform-origin: center;
-    transform: perspective(800px) rotateY(25deg);
+    transform: perspective(800px) rotateY(0deg);
+  }
+  .card2 {
+    transform: perspective(800px) rotateY(-30deg);
+  }
+  .card3 {
+    transform: perspective(800px) rotateY(30deg);
   }
 }
 

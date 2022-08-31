@@ -304,7 +304,7 @@ export const themes: ITheme[] = [
     backdrop: {
       classNames: `${styles.erc721_sj_banner_black_mirror}`,
     },
-    bgStickers: [
+    fgStickers: [
       {
         classNames: `height--40 top--30 left--64 ${styles.logo}`,
         shape: '',
@@ -313,15 +313,15 @@ export const themes: ITheme[] = [
     ],
     nfts: [
       {
-        classNames: `height--60 top--7 left--4 ${styles.card}`,
+        classNames: `height--65 top--14 left--1 ${styles.card} ${styles.card2}`,
         shape: '',
       },
       {
-        classNames: `height--60 top--7 left--40 ${styles.card}`,
+        classNames: `height--65 top--14 left--47 ${styles.card} ${styles.card3}`,
         shape: '',
       },
       {
-        classNames: `height--70 top--12 left--20 ${styles.card}`,
+        classNames: `height--70 top--12 left--23 ${styles.card}`,
         shape: '',
       },
     ],
@@ -335,7 +335,7 @@ export const themes: ITheme[] = [
     backdrop: {
       classNames: `${styles.erc721_sj_banner_black_mirror}`,
     },
-    bgStickers: [
+    fgStickers: [
       {
         classNames: `height--40 top--30 left--64 ${styles.logo}`,
         shape: '',
@@ -344,15 +344,15 @@ export const themes: ITheme[] = [
     ],
     nfts: [
       {
-        classNames: `height--60 top--7 left--4 ${styles.card}`,
+        classNames: `height--65 top--14 left--1 ${styles.card} ${styles.card2}`,
         shape: '',
       },
       {
-        classNames: `height--60 top--7 left--40 ${styles.card}`,
+        classNames: `height--65 top--14 left--47 ${styles.card} ${styles.card3}`,
         shape: '',
       },
       {
-        classNames: `height--70 top--12 left--20 ${styles.card}`,
+        classNames: `height--70 top--12 left--23 ${styles.card}`,
         shape: '',
       },
     ],
@@ -366,7 +366,7 @@ export const themes: ITheme[] = [
     backdrop: {
       classNames: `${styles.erc721_sj_banner_black_mirror}`,
     },
-    bgStickers: [
+    fgStickers: [
       {
         classNames: `height--40 top--30 left--64 ${styles.logo}`,
         shape: '',
@@ -375,15 +375,15 @@ export const themes: ITheme[] = [
     ],
     nfts: [
       {
-        classNames: `height--60 top--7 left--12 ${styles.card}`,
+        classNames: `height--65 top--14 left--15 ${styles.card} ${styles.card2}`,
         shape: '',
       },
       {
-        classNames: `height--60 top--7 left--40 ${styles.card}`,
+        classNames: `height--65 top--14 left--52 ${styles.card} ${styles.card3}`,
         shape: '',
       },
       {
-        classNames: `height--70 top--12 left--25 ${styles.card}`,
+        classNames: `height--70 top--12 left--33 ${styles.card}`,
         shape: '',
       },
     ],
