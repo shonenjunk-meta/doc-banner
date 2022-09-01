@@ -49,7 +49,7 @@ const NftSelector = (props: INftSelectorProps) => {
             (filter.code === 'ALL' || filter.code === nft.code))
       )
     );
-  }, [filter]);
+  }, [filter, props.nfts]);
 
   // Retrieve all partner NFTs
   useEffect(() => {
@@ -184,7 +184,7 @@ const NftSelector = (props: INftSelectorProps) => {
           />
         </div>
         <div className={styles.gridContainer}>
-          {filteredNfts.length === 0 ? (
+          {props.nfts.length === 0 || filteredNfts.length === 0 ? (
             <div className='mb-medium'>0 NFTs Found</div>
           ) : (
             <div className='mb-medium'>{filteredNfts.length} NFTs Found</div>
