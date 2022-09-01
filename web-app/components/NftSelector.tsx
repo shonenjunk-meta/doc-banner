@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faXmark,
   faWallet,
-  faPaste,
+  faAddressBook,
   faTrash,
   faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
@@ -69,13 +69,25 @@ const NftSelector = (props: INftSelectorProps) => {
     );
   }
 
-  async function addAddress() {
+  async function addAddressFromClipboard() {
     const newAddress = await navigator.clipboard.readText();
     if (isAddress(newAddress.toLowerCase())) {
       storageService.current.AddAddress(newAddress);
       setWallets(Array.from(storageService.current.GetAddresses()));
       props.updatedAddresses();
       setShowWallet(false);
+    }
+  }
+
+  function addAddress() {
+    const newAddress = (document.getElementById('address') as HTMLInputElement)
+      .value;
+    if (isAddress(newAddress.toLowerCase())) {
+      storageService.current.AddAddress(newAddress);
+      setWallets(Array.from(storageService.current.GetAddresses()));
+      props.updatedAddresses();
+      setShowWallet(false);
+      (document.getElementById('address') as HTMLInputElement).value = '';
     }
   }
 
@@ -131,9 +143,14 @@ const NftSelector = (props: INftSelectorProps) => {
             </div>
           ))}
           <div className={styles.wallet}>
+            <input
+              type='text'
+              id='address'
+              placeholder='Wallet address...'
+            ></input>
             <button className='button success' onClick={() => addAddress()}>
-              <em>Paste Wallet Address</em>
-              <FontAwesomeIcon icon={faPaste} />
+              <em>Add</em>
+              <FontAwesomeIcon icon={faAddressBook} />
             </button>
           </div>
         </div>
