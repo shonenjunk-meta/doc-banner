@@ -26,6 +26,7 @@ export interface INftSelectorProps {
 
 const NftSelector = (props: INftSelectorProps) => {
   const [wallets, setWallets] = useState([]);
+  const [filteredNfts, setFilteredNfts] = useState([]);
 
   const [showWallet, setShowWallet] = useState(
     props.nfts.length === 0 ? true : false
@@ -37,6 +38,18 @@ const NftSelector = (props: INftSelectorProps) => {
   const showHideClassName = props.visible ? styles.visible : '';
   const initialized = useRef(false);
   const storageService = useRef<LocalStorageService>(null);
+
+  useEffect(() => {
+    setFilteredNfts(
+      props.nfts.filter(
+        (nft) =>
+          (filter.code === 'ALL' && filter.id === '') ||
+          (filter.code === nft.code && filter.id === '') ||
+          (nft.id.startsWith(filter.id) &&
+            (filter.code === 'ALL' || filter.code === nft.code))
+      )
+    );
+  }, [filter]);
 
   // Retrieve all partner NFTs
   useEffect(() => {
@@ -171,31 +184,29 @@ const NftSelector = (props: INftSelectorProps) => {
           />
         </div>
         <div className={styles.gridContainer}>
+          {filteredNfts.length === 0 ? (
+            <div className='mb-medium'>0 NFTs Found</div>
+          ) : (
+            <div className='mb-medium'>{filteredNfts.length} NFTs Found</div>
+          )}
+
           {props.nfts.length === 0 ? (
             <div>No supported NFTs found.</div>
           ) : (
-            props.nfts
-              .filter(
-                (nft) =>
-                  (filter.code === 'ALL' && filter.id === '') ||
-                  (filter.code === nft.code && filter.id === '') ||
-                  (nft.id.startsWith(filter.id) &&
-                    (filter.code === 'ALL' || filter.code === nft.code))
-              )
-              .map((nft) => (
-                <div className={styles.gridItem} key={`${nft.code}#${nft.id}`}>
-                  <Image
-                    src={nft.image_url}
-                    alt='Github'
-                    width={100}
-                    height={100}
-                    layout='responsive'
-                    onClick={() => onNftSelected(nft)}
-                    loading='lazy'
-                  />
-                  <span>{nft.id}</span>
-                </div>
-              ))
+            filteredNfts.map((nft) => (
+              <div className={styles.gridItem} key={`${nft.code}#${nft.id}`}>
+                <Image
+                  src={nft.image_url}
+                  alt='Github'
+                  width={100}
+                  height={100}
+                  layout='responsive'
+                  onClick={() => onNftSelected(nft)}
+                  loading='lazy'
+                />
+                <span>{nft.id}</span>
+              </div>
+            ))
           )}
         </div>
       </div>
