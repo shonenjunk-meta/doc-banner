@@ -21,6 +21,7 @@ export interface ITheme {
   bgStickers?: IThemeImage[];
   fgStickers?: IThemeImage[];
   speech?: IThemeSpeech[];
+  credits?: string;
 }
 
 export interface IThemeImage {

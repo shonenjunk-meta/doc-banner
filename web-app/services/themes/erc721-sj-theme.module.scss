@@ -1,0 +1,38 @@
+.chikyuu_sentai {
+  .split_1_of_5 {
+    clip-path: polygon(0 0, 20% 0, 21% 100%, 0 100%);
+  }
+  .split_2_of_5 {
+    clip-path: polygon(20% 0, 40% 0, 40% 100%, 20% 100%);
+  }
+  .split_3_of_5 {
+    clip-path: polygon(40% 0, 60% 0, 60% 100%, 40% 100%);
+  }
+  .split_4_of_5 {
+    clip-path: polygon(60% 0, 80% 0, 80% 100%, 60% 100%);
+  }
+  .split_5_of_5 {
+    clip-path: polygon(80% 0, 100% 0, 100% 100%, 80% 100%);
+  }
+}
+
+.banner_black_mirror {
+  background-color: black;
+  .logo {
+    -webkit-box-reflect: below 2px
+      linear-gradient(transparent, transparent, #0004);
+    transform-origin: center;
+  }
+  .card {
+    -webkit-box-reflect: below 2px
+      linear-gradient(transparent, transparent, #0004);
+    transform-origin: center;
+    transform: perspective(800px) rotateY(0deg);
+  }
+  .card2 {
+    transform: perspective(800px) rotateY(-30deg);
+  }
+  .card3 {
+    transform: perspective(800px) rotateY(30deg);
+  }
+}

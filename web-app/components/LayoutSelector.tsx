@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ITheme } from '../model/Theme';
-import { themes } from '../services/Themes';
+import { themes } from '../services/ThemeProvider';
 import styles from './LayoutSelector.module.scss';
 
 export interface Props {
