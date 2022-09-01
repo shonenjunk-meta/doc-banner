@@ -102,6 +102,8 @@
     background-position: center, center, center,
       calc(((50% - 50%) * 2.5) + 50%) calc(((50% - 50%) * 2.5) + 50%), center;
     background-size: cover, cover, cover, 600% 1200%, cover;
+    -webkit-box-reflect: below 16%
+      linear-gradient(transparent, transparent, #0004);
   }
 
   .prints {
@@ -137,6 +139,8 @@
     background-size: 50%, 200% 700%, 300%, 200%;
     background-position: center, 0% 50%, 50% 50%, 50% 50%;
     filter: brightness(calc((0 * 0.25) + 0.66)) contrast(2) saturate(0.95);
+    -webkit-box-reflect: below 16%
+      linear-gradient(transparent, transparent, #0004);
   }
 
   .card {
