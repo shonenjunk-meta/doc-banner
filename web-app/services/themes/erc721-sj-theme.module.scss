@@ -78,9 +78,9 @@
     mix-blend-mode: color-dodge;
     opacity: 0.9;
 
-    background-image: url('https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/galaxy.png'),
-      url('https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/galaxy.png'),
-      url('https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/galaxy.png'),
+    background-image: url('../../public/images/galaxy.png'),
+      url('../../public/images/galaxy.png'),
+      url('../../public/images/galaxy.png'),
       repeating-linear-gradient(
         82deg,
         rgb(218, 56, 50) calc(80px * 1),
@@ -107,7 +107,7 @@
   }
 
   .prints {
-    background-image: url('https://res.cloudinary.com/simey/image/upload/Dev/PokemonCards/illusion.webp'),
+    background-image: url('../../public/images/illusion.webp'),
       repeating-linear-gradient(
         0deg,
         rgb(255, 119, 115) calc(5% * 1),
