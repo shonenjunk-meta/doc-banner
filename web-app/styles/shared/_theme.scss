@@ -138,13 +138,21 @@
   min-width: 1500px;
   min-height: 375px;
 
+  &.tower_on_print,
+  &.pillar_on_print,
+  &.square_on_print {
+    width: 1000px !important;
+    min-width: 1000px;
+    max-width: 1000px;
+  }
+
   .no-print {
     display: none;
   }
 
   #capture {
     &.square {
-      max-height: 1500px;
+      max-height: 1000px;
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Nft } from '../model/Nft';
-import { ITheme } from '../model/Theme';
+import { ITheme, ThemeSize } from '../model/Theme';
 import domtoimage from 'dom-to-image';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,7 @@ import styles from './Canvas.module.scss';
 import BackgroundSelector from './BackgroundSelector';
 import StickerImage from './StickerImage';
 import Loading from './Loading';
+import Parser from 'html-react-parser';
 
 type Props = {
   data: Nft[];
@@ -42,9 +43,20 @@ export default function Canvas({
   }, [downloading]);
 
   function generateImage() {
+    const printWidth = new Map<ThemeSize, number>([
+      ['twitter_banner', 1450],
+      ['facebook_banner', 1450],
+      ['opensea_banner', 1450],
+      ['square', 950],
+      ['pillar', 950],
+      ['tower', 950],
+    ]);
+
     return new Promise((resolve) => {
       domtoimage
-        .toPng(document.querySelector('#capture'), { width: 1450 })
+        .toPng(document.querySelector('#capture'), {
+          width: printWidth.get(theme.size),
+        })
         .then(function (dataUrl) {
           return resolve(dataUrl);
         })
@@ -71,7 +83,11 @@ export default function Canvas({
   return (
     <>
       <Loading show={downloading} />
-      <div className={`container ${downloading ? 'printing' : ''}`}>
+      <div
+        className={`container ${theme?.size + '_on_print'} ${
+          downloading ? 'printing' : ''
+        }`}
+      >
         <div>
           <BackgroundSelector onChange={setBackground} />
         </div>
@@ -92,6 +108,11 @@ export default function Canvas({
                     shape={item.shape}
                     onStickerClick={() => {}}
                   />
+                ))}
+            {!theme || !theme.bgHtml || theme.bgHtml.length === 0
+              ? ''
+              : theme.bgHtml.map((item, index) => (
+                  <div key={index}>{Parser(item)}</div>
                 ))}
             {!theme || theme.nfts.length === 0
               ? ''
@@ -116,6 +137,11 @@ export default function Canvas({
                     shape={item.shape}
                     onStickerClick={() => {}}
                   />
+                ))}
+            {!theme || !theme.fgHtml || theme.fgHtml.length === 0
+              ? ''
+              : theme.fgHtml.map((item, index) => (
+                  <div key={index}>{Parser(item)}</div>
                 ))}
           </div>
         </div>

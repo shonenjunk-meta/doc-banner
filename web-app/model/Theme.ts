@@ -17,11 +17,12 @@ export interface ITheme {
   size: ThemeSize;
   backdrop: IThemeImage;
   nfts: IThemeNft[];
-
   bgStickers?: IThemeImage[];
+  bgHtml?: string[];
   fgStickers?: IThemeImage[];
+  fgHtml?: string[];
   speech?: IThemeSpeech[];
-  credits?: string;
+  credits?: IThemeCredit[];
 }
 
 export interface IThemeImage {
@@ -38,4 +39,10 @@ export interface IThemeNft {
 export interface IThemeSpeech {
   dialogue: string;
   classNames?: string;
+}
+
+export interface IThemeCredit {
+  name?: string;
+  link?: string;
+  note?: string;
 }

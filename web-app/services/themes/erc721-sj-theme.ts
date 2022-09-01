@@ -14,7 +14,7 @@ const blackMirrorBanners: ITheme[] = [
     },
     fgStickers: [
       {
-        classNames: `height--40 top--30 left--64 ${styles.logo}`,
+        classNames: `height--40 top--50 left--60 ${styles.logo}`,
         shape: '',
         src: StickerProvider.sjLogoBlue,
       },
@@ -271,9 +271,37 @@ const squarePosters: ITheme[] = [
   },
 ];
 
+const pillarPosters: ITheme[] = [
+  // SJ Holographic
+  {
+    id: '7iOla2MlOpCl5wB',
+    code: 'ERC721_SJ',
+    name: 'SJ Holo Solo Card',
+    size: 'pillar',
+    classNames: `pillar`,
+    backdrop: {
+      classNames: `${styles.square_holo}`,
+    },
+    bgHtml: [
+      `<div class=${styles.mainCard}><div>`,
+      `<div class=${styles.wrapper}><div>`,
+      `<div class=${styles.prints}><div>`,
+      `<div class=${styles.speck}><div>`,
+      `<img class=${styles.logo} src=${StickerProvider.sjLogoBlue.src}/>`,
+    ],
+    nfts: [
+      {
+        classNames: `${styles.card}`,
+        shape: '',
+      },
+    ],
+  },
+];
+
 export const ERC721_SJ_THEMES: ITheme[] = [
   ...blackMirrorBanners,
   ...gen4Banners,
   ...gen6Banners,
   ...squarePosters,
+  ...pillarPosters,
 ];
