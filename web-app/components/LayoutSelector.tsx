@@ -53,8 +53,8 @@ const LayoutSelector = ({ themeUpdated }: Props) => {
   return (
     <div className={styles.layoutSelector}>
       <select name='size' id='size' onChange={sizeChange}>
-        <option value='twitter_banner'>Twitter Banner</option>
-        <option value='facebook_banner'>Facebook Banner</option>
+        <option value='twitter_banner'>Twitter/Facebook Banner</option>
+        {/* <option value='facebook_banner'>Facebook Banner</option> */}
         <option value='opensea_banner'>Opensea Banner</option>
         <option value='square'>Square (1:1)</option>
         <option value='pillar'>Pillar (1:1.6)</option>
