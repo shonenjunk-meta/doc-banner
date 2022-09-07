@@ -66,6 +66,66 @@ const twitterBanners: ITheme[] = [
     ],
   },
   {
+    id: 'h0gBfttsLyxjbXD',
+    code: 'ERC721_WFNH-BE',
+    name: 'WF Banner 4',
+    size: 'twitter_banner',
+    classNames: 'twitter-banner',
+    backdrop: {
+      classNames: `${styles.banner_4} bg-wfnh-banner-4 bg-size--cover bg-pos-y--bottom bg-pos-x--left`,
+    },
+    nfts: [
+      {
+        classNames: `${styles.nft1}`,
+      },
+      {
+        classNames: `${styles.nft2}`,
+      },
+      {
+        classNames: `${styles.nft3}`,
+      },
+      {
+        classNames: `${styles.nft4}`,
+      },
+      {
+        classNames: `${styles.nft5}`,
+      },
+      {
+        classNames: `${styles.nft6}`,
+      },
+      {
+        classNames: `${styles.nft7}`,
+      },
+      {
+        classNames: `${styles.nft8}`,
+      },
+      {
+        classNames: `${styles.nft9}`,
+      },
+      {
+        classNames: `${styles.nft10}`,
+      },
+      {
+        classNames: `${styles.nft11}`,
+      },
+      {
+        classNames: `${styles.nft12}`,
+      },
+      {
+        classNames: `${styles.nft13}`,
+      },
+      {
+        classNames: `${styles.nft14}`,
+      },
+      {
+        classNames: `${styles.nft15}`,
+      },
+      {
+        classNames: `${styles.nft16}`,
+      },
+    ],
+  },
+  {
     id: 'EpHIvIRkXIWjyM1',
     code: 'ERC721_WFNH-BE',
     name: 'WF Banner 5',
