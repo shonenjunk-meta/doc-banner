@@ -136,7 +136,7 @@ export default function Home() {
           src={selectedCollection?.logo}
           className='h-16 w-16 tablet:h-24 tablet:w-24 mx-auto tablet:mx-4'
         />
-        <div className='tablet:text-left'>
+        <div className='mx-4 tablet:mx-0 tablet:text-left'>
           <h2 className='text-4xl mt-4'>{selectedCollection?.name}</h2>
           <h1 className='text-md mt-2 text-slate-500'>
             {message[Math.floor(Math.random() * message.length)]}

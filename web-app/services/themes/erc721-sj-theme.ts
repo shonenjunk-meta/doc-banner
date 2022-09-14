@@ -136,7 +136,7 @@ const gen4Banners: ITheme[] = [
     size: 'facebook_banner',
     classNames: 'facebook-banner',
     backdrop: {
-      classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
     nfts: [
       {
@@ -168,7 +168,7 @@ const gen6Banners: ITheme[] = [
     size: 'opensea_banner',
     classNames: 'opensea-banner',
     backdrop: {
-      classNames: 'bg-wfnh bg-size--cover bg-pos-y--bottom bg-pos-x--left',
+      classNames: 'bg-size--cover bg-pos-y--bottom bg-pos-x--left',
     },
     nfts: [
       {

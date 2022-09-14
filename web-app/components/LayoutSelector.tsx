@@ -7,24 +7,67 @@ export interface Props {
   themeUpdated?: (theme: ITheme) => void;
 }
 
+const sizes = [
+  {
+    size: 'twitter_banner',
+    label: 'Twitter',
+  },
+  {
+    size: 'facebook_banner',
+    label: 'Facebook',
+  },
+  {
+    size: 'opensea_banner',
+    label: 'Opensea',
+  },
+  {
+    size: 'square',
+    label: 'Square (1:1)',
+  },
+  {
+    size: 'tower',
+    label: 'Phone',
+  },
+  {
+    size: 'pillar',
+    label: 'Poster',
+  },
+];
+
 const LayoutSelector = ({ colId, themeUpdated }: Props) => {
+  const [filteredSizes, setFilteredSizes] = useState([]);
   const [filteredThemes, setFilteredThemes] = useState([]);
   const [filter, setFilter] = useState({
-    size: 'twitter_banner',
+    size: '',
     themeId: '',
   });
 
   useEffect(() => {
     if (colId) {
-      const filtered = themes.filter(
+      const themeFilteredByCode = themes.filter(
+        (theme) =>
+          theme.code.toLowerCase().trim() === colId.toLowerCase().trim() ||
+          theme.code.toLowerCase().trim() === 'generic'
+      );
+      const fs = sizes.filter(
+        (s) => themeFilteredByCode.filter((f) => f.size === s.size).length > 0
+      );
+      setFilteredSizes(fs);
+      if (filter.size === '' && fs.length > 0) {
+        setFilter({ size: fs[0].size, themeId: filter.themeId });
+        return;
+      }
+
+      const themeFilteredBySize = themes.filter(
         (theme) =>
           theme.size === filter.size &&
           (theme.code.toLowerCase().trim() === colId.toLowerCase().trim() ||
             theme.code.toLowerCase().trim() === 'generic')
       );
-      setFilteredThemes(filtered);
-      if (!filter.themeId && filtered.length > 0) {
-        themeSelect(filtered[0].id);
+
+      setFilteredThemes(themeFilteredBySize);
+      if (!filter.themeId && themeFilteredBySize.length > 0) {
+        themeSelect(themeFilteredBySize[0].id);
       }
     }
   }, [filter, colId]);
@@ -59,7 +102,22 @@ const LayoutSelector = ({ colId, themeUpdated }: Props) => {
       <div className='w-full text-tiny md:text-sm'>
         <div className=''>
           <ul className='flex flex-wrap justify-center tablet:justify-start -mb-px font-medium text-center text-white'>
-            <li className=''>
+            {filteredSizes &&
+              filteredSizes.map((item) => (
+                <li key={item.size}>
+                  <a
+                    onClick={() => sizeSelect(item.size)}
+                    className={`inline-flex p-4 rounded-t-lg border-b-2 text-white hover:border-b-sj-yellow hover:text-sj-yellow cursor-pointer ${
+                      filter.size === item.size
+                        ? 'border-b-sj-yellow text-sj-yellow'
+                        : ''
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            {/* <li className=''>
               <a
                 onClick={() => sizeSelect('twitter_banner')}
                 className={`inline-flex p-4 rounded-t-lg border-b-2 text-white hover:border-b-sj-yellow hover:text-sj-yellow cursor-pointer ${
@@ -131,7 +189,7 @@ const LayoutSelector = ({ colId, themeUpdated }: Props) => {
               >
                 Poster
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <a
                 onClick={() => sizeSelect('twitter_banner')}
