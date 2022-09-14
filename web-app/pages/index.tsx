@@ -1,116 +1,30 @@
-import { useEffect, useRef, useState } from 'react';
-import Canvas from '../components/Canvas';
-import LayoutSelector from '../components/LayoutSelector';
-import NftSelector from '../components/NftSelector';
-import { Nft } from '../model/Nft';
-import { ITheme } from '../model/Theme';
-import {
-  getNftPlaceholders,
-  updateNftPlaceholders,
-} from '../services/data.service';
-import { LocalStorageService } from '../services/local-storage.service';
+import Head from 'next/head';
+import { COLLECTIONS } from '../data/collections';
 
 export default function Home() {
-  const [theme, setTheme] = useState(null);
-  const [nfts, setNfts] = useState([] as Nft[]);
-  const [visibleModal, setModalVisible] = useState(false);
-  const [data, setData] = useState(getNftPlaceholders(50));
-  const [selectedIndex, setSelectedIndex] = useState(-1);
-  const initialized = useRef(false);
-  const storageService = useRef<LocalStorageService>(null);
-
-  // Retrieve all partner NFTs
-  useEffect(() => {
-    async function getAllNFTs() {
-      storageService.current = new LocalStorageService();
-      let promises = [];
-      storageService.current
-        .GetAddresses()
-        .forEach(async (standard, address) => {
-          promises.push(storageService.current.findNFTs(address, standard));
-        });
-      Promise.all(promises).then(() => {
-        let newArray = [...storageService.current.getMyNFTs()];
-        setNfts(newArray);
-      });
-    }
-
-    if (!initialized.current) {
-      getAllNFTs();
-      initialized.current = true;
-    }
-  }, []);
-
-  useEffect(() => {
-    setData(updateNftPlaceholders([...data], theme));
-  }, [theme]);
-
-  const showNftSelector = () => {
-    setModalVisible(true);
-  };
-
-  const hideNftSelector = () => {
-    setModalVisible(false);
-  };
-
-  const themeUpdated = (theme: ITheme) => {
-    setTheme(theme);
-  };
-
-  const onAvatarClick = (index: number) => {
-    setSelectedIndex(index);
-    let dataCopy = [...data];
-    showNftSelector();
-    if (dataCopy[index].id.startsWith('-')) {
-      //showNftSelector();
-      //return;
-    }
-  };
-
-  const onAvatarSelected = (avatar: Nft) => {
-    let dataCopy = [...data];
-    dataCopy[selectedIndex] = avatar;
-    setData(dataCopy);
-    hideNftSelector();
-  };
-
-  const onDownload = (src: string) => {
-    storageService.current.SaveDownload(src);
-  };
-
-  const updatedAddresses = async () => {
-    storageService.current = new LocalStorageService();
-    let promises = [];
-    storageService.current.GetAddresses().forEach(async (standard, address) => {
-      promises.push(storageService.current.findNFTs(address, standard));
-    });
-
-    Promise.all(promises).then(() => {
-      let newArray = [...storageService.current.getMyNFTs()];
-      setNfts(newArray);
-    });
-  };
-
   return (
-    <div className='text-center'>
-      <h1>Let&apos;s Create!</h1>
-      <LayoutSelector themeUpdated={themeUpdated} />
-
-      <Canvas
-        data={data}
-        onAvatarClick={onAvatarClick}
-        onDownload={onDownload}
-        theme={theme}
-      />
-
-      <NftSelector
-        nfts={nfts}
-        inUseNfts={[]}
-        visible={visibleModal}
-        onAvatarSelected={onAvatarSelected}
-        onCloseClick={hideNftSelector}
-        updatedAddresses={updatedAddresses}
-      />
+    <div className='max-w-max mx-auto w-[90%] mt-6'>
+      <Head>
+        <title>Posterizer - Let's create!</title>
+      </Head>
+      <h2 className='mb-4 text-xl text-center tablet:text-left'>
+        Select a theme
+      </h2>
+      <div className='grid grid-cols-3 gap-6 tiny:grid-cols-4 phone:grid-cols-5 tablet:grid-cols-6 desktop:grid-cols-8'>
+        {COLLECTIONS.map((col, index) => (
+          <a key={index} href={`/collection/${col.id}`}>
+            <div
+              className={`bg-[#34363a] overflow-hidden p-2 rounded-[1em] ease-in duration-100 hover:scale-110 hover:drop-shadow-2xl`}
+            >
+              <img
+                src={col.logo}
+                alt={col.name}
+                className='rounded-lg aspect-square'
+              ></img>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 export type standard = 'ERC721';
+
 export type tokenCode =
   | 'GENERIC'
   | 'ERC721_SJ'

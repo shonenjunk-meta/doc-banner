@@ -1,27 +1,15 @@
 import Link from 'next/link';
 import sjLogo from '../public/shonen-junk-logo.svg';
-import wfLogo from '../public/wize-fellaz-logo.png';
-import styles from './Footer.module.scss';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <h5>From the community of</h5>
-      <div className={styles.footerLogos}>
+    <footer className='text-center mb-8 mt-auto'>
+      <h5 className='text-xs mt-20'>Create with</h5>
+      <div className='mt-auto flex flex-row justify-center mt-3 '>
         <div>
           <Link href='https://shonenjunk.xyz/'>
             <a target='_blank'>
-              <img src={sjLogo.src} />
-            </a>
-          </Link>
-        </div>
-        <div>
-          <h1>X</h1>
-        </div>
-        <div>
-          <Link href='https://www.wizefellaz.com/' target='_blank'>
-            <a target='_blank'>
-              <img src={wfLogo.src} />
+              <img src={sjLogo.src} className='h-14' />
             </a>
           </Link>
         </div>

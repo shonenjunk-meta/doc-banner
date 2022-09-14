@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
+        <link rel='shortcut icon' href='/favicon.ico' />
         <link
           href='https://fonts.googleapis.com/css?family=Poppins:400,700&display=optional'
           rel='stylesheet'
@@ -13,6 +14,7 @@ export default function Document() {
           href='https://fonts.googleapis.com/css?family=Khula:400,700&display=optional'
           rel='stylesheet'
         ></link>
+        <title>Posterize - Create with your NFTs!</title>
       </Head>
       <body>
         <Main />

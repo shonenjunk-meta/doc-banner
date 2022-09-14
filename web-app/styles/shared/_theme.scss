@@ -119,19 +119,6 @@
   }
 }
 
-.canvas-buttons {
-  button:not(:last-child) {
-    margin-bottom: 10px;
-    @include break-point(small) {
-      margin-right: 10px;
-    }
-  }
-
-  @include break-point(small) {
-    float: right;
-  }
-}
-
 .printing {
   margin-left: -500% !important;
   width: 1500px !important;
@@ -155,15 +142,6 @@
       max-height: 1000px;
     }
   }
-}
-
-.backdrop {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .nft {

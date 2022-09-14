@@ -2,7 +2,7 @@ import styles from './BackgroundSelector.module.scss';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
 import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImage, faL } from '@fortawesome/free-solid-svg-icons';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   onChange?: ({}) => void;
@@ -91,14 +91,18 @@ export default function BackgroundSelector({ onChange }: Props) {
           <div>
             <HexColorPicker color={color} onChange={setColor} />
           </div>
-          <div className={styles.hexWrapper}>
+          <div className={`text-sm ${styles.hexWrapper}`}>
             <span>HEX</span>
             <HexColorInput color={color} onChange={setColor} />
           </div>
-          <div className={styles.uploadWrapper}>
-            <div className={styles.uploadButton} onClick={() => openFiles()}>
-              Upload <FontAwesomeIcon icon={faImage} />
-            </div>
+          <div>
+            <button
+              onClick={() => openFiles()}
+              className='text-tiny bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-sm inline-flex items-center'
+            >
+              <FontAwesomeIcon icon={faImage} className='mr-2' />
+              <span>Upload</span>
+            </button>
           </div>
         </div>
       </div>

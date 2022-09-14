@@ -1,12 +1,11 @@
 import Footer from './Footer';
 import Nav from './Nav';
-import styles from './Layout.module.scss';
 
 export default function Layout({ children }) {
   return (
     <>
       <Nav />
-      <div className={styles.layout}>
+      <div className='min-h-[calc(100vh-60px)] flex flex-col justify-space-between'>
         <main>{children}</main>
         <Footer />
       </div>

@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faRefresh } from '@fortawesome/free-solid-svg-icons';
 import AvatarImage from './AvatarImage';
-import styles from './Canvas.module.scss';
 import BackgroundSelector from './BackgroundSelector';
 import StickerImage from './StickerImage';
 import Loading from './Loading';
@@ -95,7 +94,9 @@ export default function Canvas({
           <div
             id='capture'
             style={customBackground}
-            className={`backdrop ${theme?.backdrop?.classNames ?? ''}`}
+            className={`overflow-hidden inset-0 absolute ${
+              theme?.backdrop?.classNames ?? ''
+            }`}
           >
             {!theme || !theme.bgStickers || theme.bgStickers.length === 0
               ? ''
@@ -146,17 +147,20 @@ export default function Canvas({
           </div>
         </div>
 
-        <div className='canvas-buttons'>
-          <button className='button' onClick={() => setBackground({})}>
-            <FontAwesomeIcon icon={faRefresh} /> Default
+        <div className='phone:float-right space-x-2 > * + *'>
+          <button
+            className='text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md inline-flex items-center'
+            onClick={() => setBackground({})}
+          >
+            <FontAwesomeIcon icon={faRefresh} className='mr-1' /> Default
           </button>
 
           <button
             disabled={downloading ? true : false}
-            className='button'
+            className='text-sm bg-sj-blue hover:bg-sj-yellow hover:text-sj-blue text-white font-bold py-2 px-4 rounded-md inline-flex items-center'
             onClick={() => setDownloading(true)}
           >
-            <FontAwesomeIcon icon={faDownload} /> Download
+            <FontAwesomeIcon icon={faDownload} className='mr-1' /> Download
           </button>
         </div>
       </div>

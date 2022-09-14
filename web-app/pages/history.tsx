@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { LocalStorageService } from '../services/local-storage.service';
 import styles from './history.module.scss';
+import Head from 'next/head';
 
 interface DownloadedFile {
   id: number;
@@ -52,6 +53,9 @@ export default function History() {
 
   return (
     <div className={styles.downloadsWrapper}>
+      <Head>
+        <title>Posterizer - Download History</title>
+      </Head>
       <h1>Download History</h1>
       <h3>{`${downloads.length} found`}</h3>
       <div className={styles.itemsWrapper}>
