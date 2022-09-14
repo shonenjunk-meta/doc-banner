@@ -14,7 +14,6 @@ export default function Document() {
           href='https://fonts.googleapis.com/css?family=Khula:400,700&display=optional'
           rel='stylesheet'
         ></link>
-        <title>Posterize - Create with your NFTs!</title>
       </Head>
       <body>
         <Main />

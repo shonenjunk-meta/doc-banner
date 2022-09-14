@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className='max-w-max mx-auto w-[90%] mt-6'>
       <Head>
-        <title>Posterizer - Let's create!</title>
+        <title>Posterizer - Let&apos;s create!</title>
       </Head>
       <h2 className='mb-4 text-xl text-center tablet:text-left'>
         Select a theme
