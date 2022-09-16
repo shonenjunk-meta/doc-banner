@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './services/themes/**/*.{ts}',
   ],
   theme: {
     extend: {
@@ -39,6 +40,15 @@ module.exports = {
         'coiw-blue': '#202046',
         'coiw-purple': '#383476',
         'coiw-gold': '#D8B52A',
+      },
+      backgroundImage: {
+        /**
+         * CoiW images
+         */
+        // 'coiw-banner-1': '/backdrops/coiw_banner_1.png',
+        // 'coiw-banner-2': '/backdrops/coiw_banner_2.png',
+        // 'coiw-banner-3': '/backdrops/coiw_banner_3.png',
+        // 'coiw-banner-4': '/backdrops/coiw_banner_4.png',
       },
     },
   },

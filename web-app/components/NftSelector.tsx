@@ -165,7 +165,7 @@ const NftSelector = (props: INftSelectorProps) => {
           ))}
           <div className='text-sm flex flex-row items-center justify-between mt-4'>
             <input
-              className='py-2 px-4 grow'
+              className='py-2 px-4 grow text-white bg-[#3b3b3b]'
               type='text'
               id='address'
               placeholder='Wallet address...'
@@ -183,7 +183,7 @@ const NftSelector = (props: INftSelectorProps) => {
       <div className={`${showWallet ? 'hidden' : ''}`}>
         <div className='mt-8 mx-8 flex flex-col phone:flex-row justify-left tablet:justify-center'>
           <select
-            className='px-4 py-2 mb-4 phone:mb-0 phone:mr-4'
+            className='px-4 py-2 mb-4 phone:mb-0 phone:mr-4 text-white bg-[#3b3b3b]'
             name='nfts'
             id='collectionId'
             onChange={search}
@@ -194,7 +194,7 @@ const NftSelector = (props: INftSelectorProps) => {
             <option value='ERC721_WFNH-BE'>WF Bronze Ed</option>
           </select>
           <input
-            className='px-4 py-2'
+            className='px-4 py-2 text-white bg-[#3b3b3b]'
             id='keyword'
             type='text'
             onChange={search}

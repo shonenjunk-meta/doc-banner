@@ -75,6 +75,10 @@
   margin-bottom: 15px;
 }
 
+.click-through {
+  pointer-events: none;
+}
+
 .absolute {
   position: absolute;
 }
@@ -124,6 +128,12 @@
     &--cover {
       background-size: cover;
     }
+  }
+}
+
+.opacity {
+  @for $i from 1 through 100 {
+    @include add-opacity($i);
   }
 }
 

@@ -101,3 +101,11 @@
     background-position-y: unquote($argument + '%');
   }
 }
+
+@mixin add-opacity($argument) {
+  $number: $argument;
+
+  &--#{$number} {
+    opacity: unquote($argument + '%');
+  }
+}

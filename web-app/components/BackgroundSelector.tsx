@@ -93,7 +93,12 @@ export default function BackgroundSelector({ onChange }: Props) {
           </div>
           <div className={`text-sm ${styles.hexWrapper}`}>
             <span>HEX</span>
-            <HexColorInput color={color} onChange={setColor} />
+            <HexColorInput
+              prefixed={true}
+              color={color}
+              onChange={setColor}
+              className='text-white bg-[#3b3b3b]'
+            />
           </div>
           <div>
             <button

@@ -8,7 +8,7 @@
     overflow: hidden;
     position: absolute;
     content: '';
-    background-color: black;
+    background-color: white;
     border: solid 4px black;
     opacity: 0.3;
     border-radius: 50%;
@@ -24,24 +24,24 @@
     padding-top: 33.3333%;
     margin-bottom: 15%;
 
-    &::after {
-      width: 20%;
-      padding-top: 20%;
-      border-radius: 50%;
-      bottom: -33%;
-      left: 3%;
-      right: auto;
+    // &::after {
+    //   width: 20%;
+    //   padding-top: 20%;
+    //   border-radius: 50%;
+    //   bottom: -33%;
+    //   left: 3%;
+    //   right: auto;
 
-      @include break-point(small) {
-        padding-top: 0;
-        width: 133px;
-        height: 133px;
-        border-radius: 50%;
-        bottom: -70px;
-        left: 2%;
-        right: auto;
-      }
-    }
+    //   @include break-point(small) {
+    //     padding-top: 0;
+    //     width: 133px;
+    //     height: 133px;
+    //     border-radius: 50%;
+    //     bottom: -70px;
+    //     left: 2%;
+    //     right: auto;
+    //   }
+    // }
   }
 
   &.opensea-banner {
@@ -49,46 +49,47 @@
     padding-top: 25%;
     margin-bottom: 57px;
 
-    &::after {
-      width: 82px;
-      height: 82px;
-      border-radius: 50%;
-      bottom: -42px;
-      left: 2%;
-      right: auto;
+    // &::after {
+    //   width: 82px;
+    //   height: 82px;
+    //   border-radius: 50%;
+    //   bottom: -42px;
+    //   left: 2%;
+    //   right: auto;
 
-      @include break-point(small) {
-        width: 108px;
-        height: 108px;
-        border-radius: 50%;
-        bottom: -28px;
-        left: 2%;
-        right: auto;
-      }
-    }
+    //   @include break-point(small) {
+    //     width: 108px;
+    //     height: 108px;
+    //     border-radius: 50%;
+    //     bottom: -28px;
+    //     left: 2%;
+    //     right: auto;
+    //   }
+    // }
   }
 
   &.facebook-banner {
+    bottom: -20%;
     padding-top: 33.3333%;
-    margin-bottom: 120px;
+    margin-bottom: 15%;
 
-    &::after {
-      width: 160px;
-      height: 160px;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      bottom: -92px;
+    // &::after {
+    //   width: 160px;
+    //   height: 160px;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: -92px;
 
-      @include break-point(medium) {
-        width: 168px;
-        height: 168px;
-        bottom: -150px;
-        left: 3%;
-        right: auto;
-      }
-    }
+    //   @include break-point(medium) {
+    //     width: 168px;
+    //     height: 168px;
+    //     bottom: -150px;
+    //     left: 3%;
+    //     right: auto;
+    //   }
+    // }
   }
 
   &.square {
@@ -203,6 +204,12 @@
 }
 .hexagon {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.hexagon-2 {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.hexagon-3 {
+  clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
 }
 .heptagon {
   clip-path: polygon(
