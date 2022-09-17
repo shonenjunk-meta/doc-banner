@@ -106,6 +106,7 @@ export class LocalStorageService {
         response.result.forEach((tx: any) => {
           let tokenSymbol = `ERC721_${tx.tokenSymbol}`;
           if (erc721WhiteList.includes(tokenSymbol)) {
+            // Add NFT
             if (tx.to.toLowerCase() === address) {
               this.myNFTs.push({
                 code: tokenSymbol as tokenCode,
@@ -116,6 +117,7 @@ export class LocalStorageService {
                   tx.tokenID
                 ),
               });
+              // Remove NFT
             } else {
               let index = this.myNFTs.findIndex((nft) => nft.id === tx.tokenID);
               if (index >= 0) {

@@ -221,7 +221,7 @@ const NftSelector = (props: INftSelectorProps) => {
                 >
                   <Image
                     src={nft.image_url}
-                    alt='Github'
+                    alt='Missing'
                     width={100}
                     height={100}
                     layout='responsive'
