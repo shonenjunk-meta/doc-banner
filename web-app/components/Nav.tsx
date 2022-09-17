@@ -9,7 +9,7 @@ export default function Nav() {
     <nav className='bg-[#16181d] text-white'>
       <div className='max-w-max mx-auto flex flex-row justify-start items-center h-[60px] space-x-5 > * + *'>
         <div>
-          <h1 className='ml-4 text-3xl'>Mr. Banner</h1>
+          <h1 className='ml-4 text-3xl'>Dr. Banner</h1>
         </div>
 
         <Link href='/'>
