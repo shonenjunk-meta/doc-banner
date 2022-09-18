@@ -23,6 +23,6 @@ function getImageUrl(code: tokenCode, id: string): string {
         JUNKIES_DATA[parseInt(id)].hash
       }.png`;
     case 'ERC721_WFNH-BE':
-      return WIZEFELLAS_DATA[id];
+      return WIZEFELLAS_DATA[Number.parseInt(id) - 1];
   }
 }

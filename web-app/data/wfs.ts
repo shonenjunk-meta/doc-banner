@@ -2691,6 +2691,7 @@ export const WIZEFELLAS_DATA = [
   'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2690?s=d8f2b66d00fb14fd03fbbbfd5410dc5e',
   'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2691?s=aa8911cb63acb4de50628b271fadc29b',
   'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2692?s=6bfa94f61d39175a86f812c607ab30e0',
+  'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2693?s=5a87cab12487f1fddf1e5d054e39f349',
   'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2694?s=b744b5e6b790be06a000120f85be2076',
   'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2695?s=bab9877222edc7437db9092eaecca343',
   'https://assets.bueno.art/images/8701d34b-d5e2-47cd-af5c-902d22336f3d/default/2696?s=43ac10ec55a20552bbc09ee9b8b0c4bd',
